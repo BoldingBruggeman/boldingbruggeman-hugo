@@ -14,9 +14,8 @@ googleAnalytics = ""
   description = "Describe your website"
   copyright = "&copy;2017 BB"
   sidebarAbout = [
-    "I am a creative illustrator and graphic designer with more than 10 years of experience.",
-    "Developed by a group of volunteers over 20+ years.",
-    "Egon og Kaj was here ..."
+    "BB develops and applies advanced numerical models for natual waters.",
+    "[GOTM](http://hugo.gotm.net)",
   ]
   # Contact page
      # Since this template is static, the contact form uses www.formspree.io as a
