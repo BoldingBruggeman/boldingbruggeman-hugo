@@ -15,6 +15,10 @@ library for flows in natural waters and a 1D water column model.
 
 <!--more-->
 
+-  [Developments by BB](#developments-by-bb)
+   -  [Hotstart](#hotstart)
+   -  [Assimilation](#assimilation)
+
 GOTM was initiated by Hans Burchard and Karsten Bolding in 1998 and the first 
 public release was in 1999. BB has always been responsible for maintaining 
 the code – first using CVS and later using git. BB has provided numerous code 
