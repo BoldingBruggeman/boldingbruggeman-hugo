@@ -3,7 +3,7 @@ author = "Jorn Bruggeman"
 date = "2017-05-31T13:58:54+02:00"
 description = "A YAML parser library for Fortran"
 draft = false
-image = "portfolio/img/"
+image = "portfolio/img/3m.svg"
 showonlyimage = false
 title = "Fortran-YAML"
 weight = 20
@@ -17,6 +17,8 @@ Used by e.g. [FABM](http://www.fabm.net) to read the run-time bio-geochemical
 configuration file **fabm.yaml** and to read output configuration for the
 *flexible_output* system optionally used in [GOTM](http://www.gotm.net) and 
 [GETM](http://www.getm.eu).
+
+Figure from [here](http://svgur.com/s/3m)
 
 <!--more-->
 
