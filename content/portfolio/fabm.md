@@ -10,10 +10,15 @@ weight = 100
 
 +++
 
-The Framework for Aquatic Biogeochemical Models (FABM) provides a generic, easy to use, high performance coupling layer that connects a hydrodynamic model (e.g., 1D water column, 3D world ocean) with multiple biogeochemical submodels.
+The Framework for Aquatic Biogeochemical Models (FABM) provides a generic, easy 
+to use, high performance coupling layer that connects a hydrodynamic model 
+(e.g., 1D water column, 3D world ocean) with multiple biogeochemical submodels.
 
 <!--more-->
 
-Development of FABM was initiated in the EU FP7 project [MEECE](http://www.meece.eu). Since then, BB has continued to maintain and further develop FABM, with all changes made publicly available under the GPL.
+Development of FABM was initiated in the EU FP7 project 
+[MEECE](http://www.meece.eu)
+. Since then, BB has continued to maintain and further develop FABM, with all 
+changes made publicly available under the GPL.
 
 

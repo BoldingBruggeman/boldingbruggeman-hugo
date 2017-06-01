@@ -10,8 +10,12 @@ weight = 50
 
 +++
 
-ACPy is an auto-calibration utility for [GOTM](www.gotm.net) and 
-[fabm0d](www.fabm.net). ACPy is written in [python](www.python.org).
+ACPy is an auto-calibration utility for 
+[GOTM](http://www.gotm.net)
+ and 
+[fabm0d](http://www.fabm.net)
+. ACPy is written in 
+[python](http://www.python.org).
 
 <!--more-->
 

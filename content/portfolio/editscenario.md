@@ -10,7 +10,9 @@ weight = 40
 
 +++
 
-EditScenario is a [Python](www.python.org) script used to generate and manipulate Fortran namelists - based on XML formatted configuration file.
+EditScenario is a 
+[python](http://www.python.org) 
+script used to generate and manipulate Fortran namelists - based on XML formatted configuration file.
 
 <!--more-->
 

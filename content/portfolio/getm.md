@@ -10,7 +10,7 @@ weight = 90
 
 +++
 
-The General Estuarine Transport Model [GETM](www.getm.eu) is a primitive
+The General Estuarine Transport Model [GETM](http://www.getm.eu) is a primitive
 equation numerical model for ocean and lake simulations.
 
 <!--more-->
@@ -21,4 +21,13 @@ from GOTM. BB has – as with GOTM – always been responsible for maintaining i
 the code – first using CVS and later using git. BB has provided numerous code i
 contributions and has participated very active on the developers and users i
 mailing lists.
+
+### Bristol Channel simulations
+
+#### Period 1
+{{< vimeo 219693843 >}}
+
+#### Period 2
+{{< vimeo 219694526 >}}
+
 

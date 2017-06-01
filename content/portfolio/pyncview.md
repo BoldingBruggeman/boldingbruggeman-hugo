@@ -12,13 +12,16 @@ weight = 30
 
 PyNcView is a stand-alone application for viewing 
 [NetCDF](https://www.unidata.ucar.edu/software/netcdf/) 
-files on Windows, Linux and Mac OS. It is written in [Python](www.python.org)
- and builds upon [MatPlotLib](https://matplotlib.org/) and 
+files on Windows, Linux and Mac OS. It is written in 
+[Python](http://www.python.org)
+ and builds upon 
+[MatPlotLib](https://matplotlib.org/) and 
 [Qt](https://www.qt.io/).
 
 <!--more-->
 
-PyNcView can visualize arbitrary [CF](www.cfconventions.org) compliant NetCDF 
+PyNcView can visualize arbitrary 
+[CF](http://www.cfconventions.org) compliant NetCDF 
 files. It is also aware of the coordinate systems of 
 [GOTM](www.gotm.net)
  and 

@@ -11,9 +11,9 @@ public as Free Software. We have been using the GPL license for all our
 software. Over the last years it has been increasingly difficult to obtain 
 sufficient funding to carry out our contribution the further development of the 
 various software projects we are involved in – most notable 
-[GETM](www.getm.eu)
+[GETM](http://www.getm.eu)
  and 
-[GOTM](www.gotm.net)
+[GOTM](http://www.gotm.net)
 . As 
 a consequence we will try out a ‘crowd funding’ approach where we will try 
 to obtain the funding of our contributions through financial contribution from 
@@ -27,19 +27,19 @@ public git repository.
 ## Projects by the hour
 
 We focus on the development and application of 
-[FABM](www.fabm.net/wiki), 
-[GOTM](www.gotm.net)
+[FABM](http://www.fabm.net/wiki), 
+[GOTM](http://www.gotm.net)
  and 
-[GETM](www.getm.eu)
+[GETM](http://www.getm.eu)
 . For 
 instance, we can develop new functionality for these software packages: in 
 consultation with the client, we define a project that will implement, test and 
 deliver a high quality component. Typically, the result of these developments 
 will be included in the public repository with a proper acknowledgement. In 
 cases where we have full copyright of the software – typically everything but 
-[GOTM](www.gotm.net)
+[GOTM](http://www.gotm.net)
  and 
-[GETM](www.getm.eu)
+[GETM](http://www.getm.eu)
  – custom tailored licensing agreements can be arranged. This 
 might be appropriate in cases where proprietary data are included.
 
@@ -47,11 +47,11 @@ Using Amazon Elastic Cloud/Amazon Web Services we can assist in the following
 project types:
 
 Configuring a 
-[GOTM](www.gotm.net)
+[GOTM](http://www.gotm.net)
  auto-calibration job on a massive parallel computer using 
 [ACPy](/portfolio/acpy/)
 . The search for an optimal parameter set to be used for a 
-[GOTM](www.gotm.net)
+[GOTM](http://www.gotm.net)
  setup is a 
 very computer intensive task. Using Amazon services we can assist in 
 configuring the job to do the task.
