@@ -1,7 +1,7 @@
-[submodule "public"]
-	path = public
-	url = git@github.com:boldingbruggeman/boldingbruggeman.github.io.git
-	branch = master
+#[submodule "public"]
+#	path = public
+#	url = git@github.com:boldingbruggeman/boldingbruggeman.github.io.git
+#	branch = master
 [submodule "theme"]
 	path = themes/hugo-creative-portfolio-theme
 	url = https://github.com/kishaningithub/hugo-creative-portfolio-theme.gi
