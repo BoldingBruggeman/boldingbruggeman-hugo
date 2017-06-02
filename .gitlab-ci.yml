@@ -1,4 +1,4 @@
-mage: publysher/hugo
+image: publysher/hugo
 
 pages:
   script:
