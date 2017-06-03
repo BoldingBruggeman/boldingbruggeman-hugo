@@ -30,7 +30,7 @@ googleAnalytics = ""
      # - send a dummy email yourself to confirm your account
      # - click the confirm link in the email from www.formspree.io
      # - you're done. Happy mailing!
-  email = "you@yoursite.com"
+  email = "karsten@bolding-bruggeman.com"
 
   # Nav links in the side bar
   [[params.navlinks]]
@@ -41,10 +41,6 @@ googleAnalytics = ""
 #  name = "Key publications"
 #  url = "publications/"
 
-#  [[params.navlinks]]
-#  name = "Get in touch"
-#  url = "contact/"
-
   [[params.navlinks]]
   name = "Business"
   url = "business/"
@@ -53,6 +49,10 @@ googleAnalytics = ""
   name = "About"
   url = "about/"
 
+  [[params.navlinks]]
+  name = "Contact"
+  url = "contact/"
+
 #  [[params.navlinks]]
 #  name = "Blog"
 #  url = "blog/"
@@ -60,7 +60,7 @@ googleAnalytics = ""
   [params.social]
 #  facebook      = "full page or profile url in facebook"
 #  googleplus    = "full profile url in googleplus"
-#  email         = "email@example.com"
+  email         = "karsten@bolding-bruggeman.com"
 #  twitter       = "full profile url in twitter"
 #  linkedin      = "full profile url in linkedin"
 #  stackoverflow = "full profile url in stackoverflow"
