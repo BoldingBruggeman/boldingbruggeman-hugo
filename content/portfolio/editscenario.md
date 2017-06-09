@@ -24,4 +24,29 @@ The use of XML as configuration language allows for a much richer experince
 compared to Fortran namelists including – in addition to variable values – 
 human readable descriptions and variable units.
 
+EditScenario is 
+[downloadable](/wheels/editscenario-0.1-py2-none-any.whl) 
+as a *wheel*-file and can be installed like this:
+
+```script
+pip install editscenario-0.1-py2-none-any.whl <--user>
+```
+
+<--user> if for per user installation - if omitted installation will be for all
+users.
+
+After installation the following can be used a a guide for use:
+
+```script
+editscenario -h
+```
+
+EditScenario comes with a close cousin - *nml2xml* converts an namelist-based
+to a XML-based one so that *editscenario* can be used.
+
+```script
+nml2xml -h
+```
+
+
 
