@@ -25,11 +25,11 @@ compared to Fortran namelists including – in addition to variable values –
 human readable descriptions and variable units.
 
 EditScenario is 
-[downloadable](/wheels/editscenario-0.1-py2-none-any.whl) 
+[downloadable](https://github.com/BoldingBruggeman/editscenario/releases) 
 as a *wheel*-file and can be installed like this:
 
 ```script
-pip install editscenario-0.1-py2-none-any.whl <--user>
+pip install editscenario-0.11-py2-none-any.whl <--user>
 ```
 
 <--user> if for per user installation - if omitted installation will be for all
