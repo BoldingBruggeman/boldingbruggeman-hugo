@@ -2,7 +2,7 @@
 author = "Jorn Bruggeman"
 date = "2017-05-31T13:58:54+02:00"
 description = "Viewer for NetCDF formatted files"
-draft = false
+draft = true
 image = "/portfolio/img/pyncview.png"
 showonlyimage = false
 title = "PyNcView"

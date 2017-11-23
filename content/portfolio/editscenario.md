@@ -2,7 +2,7 @@
 author = "Jorn Bruggeman"
 date = "2017-05-31T13:58:54+02:00"
 description = "EditScenarion generates Fortran namelist file(s) from xml formatted configuration files"
-draft = false
+draft = true
 image = "/portfolio/img/editscenario.png"
 showonlyimage = false
 title = "EditScenario"

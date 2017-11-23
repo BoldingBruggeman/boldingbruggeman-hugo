@@ -2,7 +2,7 @@
 author = "Jorn Bruggeman"
 date = "2017-05-31T13:58:54+02:00"
 description = "Auto Calibration in PYthon"
-draft = false
+draft = true
 image = "/portfolio/img/config_acpy.png"
 showonlyimage = false
 title = "ACPY"
