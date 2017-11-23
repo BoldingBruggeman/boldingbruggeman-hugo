@@ -21,7 +21,7 @@ Development of FABM was initiated in the EU FP7 project
 . Since then, BB has continued to maintain and further develop FABM, with all 
 changes made publicly available under the GPL.
 
-A very comprehensive [Wiki](http://www.fabm.net/wiki) documenting all features of FABM has been written.
+A very comprehensive [Wiki](http://fabm.net/wiki) documenting all features of FABM has been written.
 
 The FABM source code is available from [Github](https://github.com/fabm-model).
 
