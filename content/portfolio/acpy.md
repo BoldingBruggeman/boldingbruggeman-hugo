@@ -47,10 +47,13 @@ The user guide is about the use of **ACPy** and **not** about technical issues w
 
 #### Installation
 
-ACPy is available from [PyPI](https://pypi.python.org/pypi) and can be installed by simply executing the command:
+<s>ACPy is available from [PyPI](https://pypi.python.org/pypi) and can be installed by simply executing the command:
 ```
 pip install acpy
 ```
+</s>
+
+ACPy is not fully ready for realease yet - but anyone interested in experimenting can manually download and install a [wheel file](../../wheels/acpy-0.2-py2-none-any.whl). Dennis Trolle has written a [short note](../ACPy_install_and_run.docx) of the most basic use cases - from a Windows users perspective. Until we approach a release candidate there will be no support. Also expect changes in ACPy usage.
 
 Succes of installation can be tested by:
 ```
