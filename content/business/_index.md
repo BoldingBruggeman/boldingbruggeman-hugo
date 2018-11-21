@@ -1,5 +1,5 @@
 ---
-title: Business Model
+title: Business
 author: Karsten Bolding
 #type: page
 Draft: false
