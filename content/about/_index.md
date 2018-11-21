@@ -12,13 +12,6 @@ BB is a research and development company specializing in numerical models for la
 
 Hans Burchard and Karsten Bolding were equal partners until 2014, when Jorn Bruggeman replaced Hans Burchard. Jorn had already been working for BB since 2006, leading the development of FABM, the graphical user interface to GOTM (GOTM-GUI), and PyNcView.
 
-### Logos
+### Logo
 
-[<img src="http://www.bolding-bruggeman.com/wp-content/uploads/2016/09/cropped-Bolding-Bruggeman-logo-01-2-1.png" alt="cropped-Bolding-Bruggeman-logo-01-2-1.png" width="100" height="100" class="alignnone size-full wp-image-127" />][3]
-
-[<img src="http://www.bolding-bruggeman.com/wp-content/uploads/2016/09/Bolding-Bruggeman-logo-01-2-small-300x42.png" alt="bolding-bruggeman-logo-01-2-small" width="300" height="42" class="alignnone size-medium wp-image-132" srcset="http://www.bolding-bruggeman.com/wp-content/uploads/2016/09/Bolding-Bruggeman-logo-01-2-small-300x42.png 300w, http://www.bolding-bruggeman.com/wp-content/uploads/2016/09/Bolding-Bruggeman-logo-01-2-small.png 323w" sizes="(max-width: 300px) 85vw, 300px" />][4]
-
- [1]: http://www.io-warnemuende.de/hans-burchard-en.html
- [2]: http://www.io-warnemuende.de/copps.html
- [3]: http://www.bolding-bruggeman.com/wp-content/uploads/2016/09/cropped-Bolding-Bruggeman-logo-03.png
- [4]: http://www.bolding-bruggeman.com/wp-content/uploads/2016/09/Bolding-Bruggeman-logo-01-2-small.png
+{{< figure src="/about/img/Bolding-Bruggeman-logo-01-2-small-300x42.png" >}}
