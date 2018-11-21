@@ -32,6 +32,10 @@ googleAnalytics = ""
      # - you're done. Happy mailing!
   email = "karsten@bolding-bruggeman.com"
 
+  [[params.logo]]
+  logo = "/portfolio/img/logo.png"
+
+
   # Nav links in the side bar
   [[params.navlinks]]
   name = "Home"
@@ -41,13 +45,17 @@ googleAnalytics = ""
   name = "Portfolio"
   url = "portfolio/"
 
+  [[params.navlinks]]
+  name = "Business"
+  url = "business/"
+
 #  [[params.navlinks]]
 #  name = "Key publications"
 #  url = "publications/"
 
   [[params.navlinks]]
-  name = "Business"
-  url = "business/"
+  name = "Workshops"
+  url = "workshops/"
 
   [[params.navlinks]]
   name = "About"
