@@ -36,8 +36,8 @@ The major aim of the workshop is to enhance the GOTM/FABM workflow for the parti
 
 
 **Speakers**:
-[Hans Burchard](https://www.io-warnemuende.de/hans-burchard-en.html) (HB)
-Jorn Bruggeman (JB)
+[Hans Burchard](https://www.io-warnemuende.de/hans-burchard-en.html) (HB),
+Jorn Bruggeman (JB),
 Karsten Bolding (KB)
 
 Below a preliminary program is provided. Additional information will be provided if we reach the minimum number of 20 participants.
