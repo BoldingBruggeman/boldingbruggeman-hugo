@@ -34,19 +34,24 @@ The major aim of the workshop is to enhance the GOTM/FABM workflow for the parti
 
 **Important**: Please register to the workshop by sending an email to karsten@bolding-bruggeman.com no later than February 1. 2019. In order to proceed with the planning of the workshop we want to be sure there is sufficient interest (20 participants is the minimum). 
 
-Below a preliminary program is provided. Additional information will be provided if we reach the minimum number of 20 participants.
 
+**Speakers**:
+[Hans Burchard](https://www.io-warnemuende.de/hans-burchard-en.html) (HB)
+Jorn Bruggeman (JB)
+Karsten Bolding (KB)
+
+Below a preliminary program is provided. Additional information will be provided if we reach the minimum number of 20 participants.
 
 **Preliminary Program**:
 
 - **Monday - Theory and background**
-   - 09:00 to 12:00: Arrival and getting computers ready
+   - 09:00 to 12:00: Arrival and getting computers ready - KB, JB
    - 12:00 to 13:00: Lunch
    - 13:00 to 13:30: Introduction to workshop
-   - 13:00 to 14:30: Theory behind GOTM
+   - 13:00 to 14:30: Theory behind GOTM - HB
    - 14:30 to 15:00: Social activity
    - 15:00 to 15:30: Coffe break
-   - 15:30 to 17:00: Theory behind FABM
+   - 15:30 to 17:00: Theory behind FABM - JB
 - **Tuesday - Basic model work-flow**
    - 09:00 to 12:00: The GOTM/FABM model setup - configuration and forcing
    - 12:00 to 13:00: Lunch
