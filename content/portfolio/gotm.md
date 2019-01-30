@@ -16,8 +16,10 @@ library for flows in natural waters and a 1D water column model.
 <!--more-->
 
 -  [Developments by BB](#developments-by-bb)
+   -  [YAML configuration](#yaml-configuration)
+   -  [Output operators](#output-operators)
+   -  [Data assimilation](#data-assimilation)
    -  [Hotstart](#hotstart)
-   -  [Assimilation](#assimilation)
 
 GOTM was initiated by Hans Burchard and Karsten Bolding in 1998 and the first 
 public release was in 1999. BB has always been responsible for maintaining 
@@ -53,15 +55,112 @@ released for general use - but it will require funds.
 | Feature | Status | Price |
 -->
 
-| Feature&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; | &emsp;&emsp;Status&emsp;&emsp;&emsp; | &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Price (Euro) |
-| ------------------------------------------- |:------------------------------------:| -----------------------:|
-|[Hotstart](#hotstart)                        |     90 % - july 2017                 |  15.000,-               |
-|[Assimilation](#assimilation)                |     50 % - july 2017                 |  75.000,-               |
-|                                             |                                      |                         |
+<table style="width:100%">
+  <tr>
+    <th>Feature</th>
+    <th>Status</th> 
+    <th>Price (Euro)</th>
+  </tr>
+  <tr>
+    <td>YAML configuration</td>
+    <td>50 % - August 2018</td> 
+    <td>Funded</td>
+  </tr>
+  <tr>
+    <td>Output operators</td>
+    <td>90 % - January 2019</td> 
+    <td>Funded by FMI/GeoMETOC</td>
+  </tr>
+  <tr>
+    <td>Data assimilation</td>
+    <td>50 % - July 2017</td> 
+    <td>75.000,-</td>
+  </tr>
+  <tr>
+    <td>Hotstart</td>
+    <td>100 % - March 2018</td> 
+    <td>funded</td>
+  </tr>
+</table>
 
-~~Jorn - shall we consider a html table here~~
+<!--
+| Feature                                     | Status                               | Price (Euro)            |
+| ------------------------------------------- |:------------------------------------:|:-----------------------:|
+|[YAML configuration](#yaml)                  |     75 % - January 2019              |  funded                 |
+|[Output operators](#output-operators)        |     90 % - January 2019              |  funded by FMI/GeoMETEOC|
+|[Data assimilation](#data-assimilation)      |     50 % - july 2017                 |  75.000,-               |
+|[Hotstart](#hotstart)                        |    100 % - March 2018                |  funded (15.000,-)      |
+-->
 
 ----------------
+
+### YAML Configuration
+
+#### Rationale
+
+Until now GOTM has been configured through a combination of *namelists* (in a number of files) and text files (scalar time-series and profiles). Namelists - being a standard Fortran feature - has clear advantages and replacing them with a costum configuration system must be carefully evaluated. The main disadvantage of namelists is - they are Fortran only - i.e. any manipulation of the namelists must be done either in an editor or through costum made tools (like *editscenario*). New use cases of GOTM - e.g. auto-calibration - requires a flexible easy maintainable system for generating ensembles of configurations in a non-interactive way. FABM and the output manager in GOTM already uses YAML as configuration format so replacing namelists with a YAML-formatted configuration file seems the obvious choice.
+
+
+#### Implementation details
+The implementation depends on the Fortran YAML library developed by Jorn Bruggeman and briefly described [here](https://bolding-bruggeman.com/portfolio/yaml/).
+
+To ease the transition from namelist based configuration to YAML-based a method for converting namelists to a YAML-file has been implemented via command line options as seen in the figure below.
+{{< figure src="/portfolio/img/yaml_config.png" >}}
+
+The default - calling GOTM executable without any options - will read *gotm.yaml*. Skipping reading *gotm.yaml* can be achieved by specifying *--no_read_yaml_file*. Reading an existing - working - namelist configuration can be done be specifying *--read_nml_files*. Saving the final configuration to a new YAML-formatted file can be done by specifying *--save_yaml <file>* where file is the name of the target YAML file.
+
+To create a starting point for a new configuration with default parameter settings the following command can be used: *gotm --save_yaml default.yaml*.
+
+To convert an existing namelist based configuration use this command: *gotm  --read_nml_files --save_yaml gotm.yaml*
+
+
+#### Present status
+The code is presently in a private BB development Gitlab repository. When feature complete the code will be moved to a public branch of the main GOTM Github repository for discussion and testing.
+
+Presently *output.yaml* has not been merged with *gotm.yaml* - if it will depends on some further workflow experiences.
+
+---
+
+### Output operators
+The _flexible output_ facility used in GETM and GOTM have changed the way output is done. Much of the work previously done as post-processing is now done as part of model simulation. This has advantages and dis-advantages. The main dis-advantage being that the wall clock time for a given simulation will increase - because of the extra work being done. This is, however, usually more than compensated by the reduced time in the normal post-processing. The main advantage is the flexibility introduced to the output specifications. A mix of resolutions in space and time for different output regions can be defined without having to save everything with the highest space and time resolution to accomplish all possible combinations - as has been the case until now.
+Have being used for some time in operational mode at FMI/GeoMETOC has made apparant the need for additional features in relation to 1) _timing of calculations_ of derived fields and 2) a more flexible reference for the vertical coordinate used in the outputs.
+
+#### Rationale
+With the flexible output it is possible store any number of domains defined as hyper-slabs of the full domain in all 4 dimensions (x, y, z, t) through specifications in a YAML formatted file. This allows to e.g. save data from a station like region in high temporal resulution and on the other hand save the entire calculation domain in a reduced resultion to save space. Note that since any number of different outputs can be defined 
+
+#### Implementation details
+The _timing of calculations_ is implemented as an additional logical variable in the output Fortran class. During the integration the output manager sets the variable to _true_ if the variable is to be stored in the present time step. The algorithm taking care of the calculation of the derived field will check the status of the variable - and if _true_ do the calculation.
+
+
+The _output operators_ are implemented as a Fortran class library interacting with a field manager (to obtain meta-data for involved fields) and a YAML parsing library (for flexible configuration).
+Being a class library the functionality can easily be extended to include new operators without influencing the overall structure. Presently are implemented an interpolation operator that will do interpolation along a coordinate axis and a time averaging operator. 
+The background for the operators is online conversion - and storage - of fields with geo-potential (z) coordinate from sigma-coordinate type of models.
+
+#### Present status
+The _output operators_ have been merged into the master GOTM repository as of <s>January 2019nd</s> can be used by both GOTM and GETM. Below is an example of a GETM configuration defining a station type output interpolating the sigma-coordinate model field to a z-coordinate field using the sea surface a reference.
+
+{{< figure src="/portfolio/img/operators.png" >}}
+
+The example will create a file - middle_station.nc - where the temperature is saved every hour for the center positon in box_cartesian test case. The output will use the _interp_ operator and store interpolated values at the coordinates given using the sea surface as reference (z). The out_of_bounds and target\* variables are optional.
+
+The short manual provided as part of the project can be download [here](/portfolio/output_operators.pdf).
+
+---
+
+### Data Assimilation
+
+Nothing yet
+
+<!--
+#### Rationale
+
+#### Implementation details
+
+#### Present status
+-->
+
+---
+
 ### Hotstart
 
 #### Rationale
@@ -94,8 +193,7 @@ contained in hotstart_file.
 
 #### Present status
 
-The implementation is 90% finished and only some corner cases still needs to be 
-addressed. The correctness of implementation has been tested in the following way:
+The implementation is finished. The correctness of implementation has been tested in the following way:
 
 -  A full simulation is done and the hotstart file is saved.
 -  A new simulation is made identical to the original one – but including a hotstart time sometime during the simulation period. The hotstart file from the final part of the simulation is saved.
@@ -108,11 +206,3 @@ test case. A hot-start has been injected at july 1st in the simulation year.
 
 ----------------
 
-### Assimilation
-<!--
-#### Rationale
-
-#### Implementation details
-
-#### Present status
--->
