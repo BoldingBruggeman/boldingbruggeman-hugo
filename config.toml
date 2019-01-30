@@ -1,4 +1,4 @@
-baseurl = "http://boldingbruggeman.github.io/"
+baseurl = "https://boldingbruggeman.github.io/"
 title = "Bolding & Bruggeman (BB)"
 theme = "hugo-creative-portfolio-theme"
 languageCode = "en-us"
