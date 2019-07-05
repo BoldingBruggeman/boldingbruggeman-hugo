@@ -48,4 +48,4 @@ to a XML-based one so that *editscenario* can be used.
 nml2xml -h
 ```
 
-(\*) The _GUI_ functionality has been sacrifized until Intels Python distribution and PyQt is more reliable.
+(\*) Full support for the _GUI_ functionality has been sacrifized for now - might still work with Python2 but will NOT work with Python3. In addition there are issues with Intels Python distribution and PyQt.
