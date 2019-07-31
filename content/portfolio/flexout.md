@@ -3,14 +3,14 @@ author = "Jorn Bruggeman"
 date = "2019-07-01T12:00:00+02:00"
 description = "Fortran-based flexible output manager"
 draft = false
-image = "/portfolio/img/3m.svg"
+#image = "/portfolio/img/3m.svg"
 showonlyimage = false
 title = "FlexOut"
 weight = 20
 
 +++
 
-Fortran-based flexible output manager with support for NetCDF and text formats for numerical models.
+Fortran-based flexible output manager with support for NetCDF and text formats applicable for use in numerical models.
 
 <!--more-->
 
