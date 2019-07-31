@@ -18,20 +18,17 @@ configuration file **fabm.yaml** and to read output configuration for the
 *flexible_output* system optionally used in [GOTM](http://www.gotm.net) and 
 [GETM](http://www.getm.eu).
 
-Figure from [here](http://svgur.com/s/3m)
+The YAML figure is taken from [here](http://svgur.com/s/3m)
 
 <!--more-->
 
-Taken from the 
-[GitHub](https://github.com/BoldingBruggeman/fortran-yaml) repository.
+Source code repository is [here](https://github.com/BoldingBruggeman/fortran-yaml) and documentation is [here](./doc).
 
 <!--
 # Fortran-YAML
 -->
 
 This is a lightweight [YAML](http://yaml.org) parser written in object-oriented Fortran.
-
-The latest source code can be found at [GitHub](https://github.com/BoldingBruggeman/fortran-yaml).
 
 ## Features
 
