@@ -47,9 +47,9 @@ Below a preliminary program is provided. Additional information will be provided
 - **Monday - Theory and background**
    - 09:00 to 12:00: Arrival and getting computers ready - KB, JB
    - 12:00 to 13:00: Lunch
-   - 13:00 to 13:30: Introduction to workshop
+   - 13:00 to 13:30: Introduction to workshop - KB
    - 13:00 to 14:30: Theory behind GOTM - HB
-   - 14:30 to 15:00: Social activity
+   - 14:30 to 15:00: Social activity - KB
    - 15:00 to 15:30: Coffe break
    - 15:30 to 17:00: Theory behind FABM - JB
 - **Tuesday - Basic model work-flow**
@@ -62,7 +62,7 @@ Below a preliminary program is provided. Additional information will be provided
    - 09:00 to 10:30: Introduction to ACPy (sensitivity and calibration tool)
    - 10:30 to 11:00: Coffee break
    - 11:00 to 12:00: ACPy preparation for individual set-ups
-   - 12:00 to 17:00: Social activities - Bridge walking and/or sailing
+   - 12:00 to 17:00: Social activity - 3 hour sailing trip on [Aventure](http://www.galeasen-aventura.dk/).
 - **Thursday - Sensitivity, auto-calibration and ensemble simulations**
    - 09:00 to 10:30: Work on individual set-up
    - 10:30 to 11:00: Coffee break
