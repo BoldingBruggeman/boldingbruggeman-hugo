@@ -42,40 +42,48 @@ Karsten Bolding (KB)
 
 Below a preliminary program is provided. Additional information will be provided if we reach the minimum number of 20 participants.
 
-**Preliminary Program**:
+**Program**:
 
 - **Monday - Theory and background**
    - 09:00 to 12:00: Arrival and getting computers ready - KB, JB
+   - 10:00 to 10:30: Coffee break
    - 12:00 to 13:00: Lunch
    - 13:00 to 13:30: Introduction to workshop - KB
-   - 13:00 to 14:30: Theory behind GOTM - HB
-   - 14:30 to 15:00: Social activity - KB
+   - 13:00 to 14:45: Theory behind GOTM - HB
+   - 14:45 to 15:00: Social activity - KB
    - 15:00 to 15:30: Coffe break
    - 15:30 to 17:00: Theory behind FABM - JB
 - **Tuesday - Basic model work-flow**
-   - 09:00 to 12:00: The GOTM/FABM model setup - configuration and forcing
+   - 09:00 to 12:00: The GOTM/FABM model setup - KB
+   - 10:00 to 10:30: Coffee break
    - 12:00 to 13:00: Lunch
    - 13:00 to 15:00: User case configurations - short demonstrations + group work
    - 15:00 to 15:30: Coffee break
-   - 15:30 to 17:00: Group work continued
-- **Wednesday - Making a good setup + social activity**
-   - 09:00 to 10:30: Introduction to ACPy (sensitivity and calibration tool)
+   - 15:30 to 17:00: User case work continued
+- **Wednesday - Sensitivity, auto-calibration and ensemble simulations + social activity**
+   - 09:00 to 09:30: Introduction to sensitivity and calibration - JB
+   - 09:30 to 10:30: [ACPy](acpy-0.4.7-py2.py3-none-any.whl) - KB
    - 10:30 to 11:00: Coffee break
-   - 11:00 to 12:00: ACPy preparation for individual set-ups
+   - 11:00 to 12:00: ACPy continued - KB
    - 12:00 to 17:00: Social activity - 3 hour sailing trip on [Aventure](http://www.galeasen-aventura.dk/).
-- **Thursday - Sensitivity, auto-calibration and ensemble simulations**
-   - 09:00 to 10:30: Work on individual set-up
-   - 10:30 to 11:00: Coffee break
-   - 11:00 to 12:00: Work on individual set-up - contd.
+- **Thursday - Becoming a developer - working on set-ups**
+   - 09:00 to 10:00: Git, Code overview and compilation (CMake) - JB
+   - 10:00 to 10:30: Coffee break
+   - 11:00 to 12:00: Implementing a simple model in FABM - JB
    - 12:00 to 13:00: Lunch
-   - 13:00 to 15:00: Prepare short presentations - what does NOT work!!
-   - 15:00 to ??:??: Presentations - max 10 min each including discussion
-- **Friday - Becoming a developer**
-   - 09:00 to 12:00: Code overview, compilation (CMake), Git
-   - 12:00 to 13:00: Lunch
-   - 13:00 to 15:00: Implementing a simple model in FABM
+   - 13:00 to 15:00: Individual/group work
    - 15:00 to 15:30: Coffee break
-   - 16:00 to 16:30: Departure
+   - 15:30 to 17:00: Individual/group work - continued
+- **Friday - Becoming a developer**
+   - 09:00 to 10:00: Plenum discussion - elaboration on Workshop topics
+   - 10:00 to 10:30: Coffee break
+   - 10:30 to 12:00: Individual/group work
+   - 12:00 to 13:00: Lunch
+   - 13:00 to 14:00: Prepare short presentations - what does NOT work!!
+   - 14:00 to 15:00: Presentations - max 10 min
+   - 15:00 to 15:30: Coffee break
+   - 15:30 to ??:??: Presentations - max 10 min
+   - ??:??         : Departure
 - **Saturday - optional - further develop/maintain your network**
    - 09:00 to 15:00: If sufficient interest we will arrange a network activity
 
