@@ -57,7 +57,8 @@ Below a preliminary program is provided. Additional information will be provided
    - 09:00 to 12:00: The GOTM/FABM model setup - KB
    - 10:00 to 10:30: Coffee break
    - 12:00 to 13:00: Lunch
-   - 13:00 to 15:00: User case configurations - short demonstrations + group work
+   - 13:00 to 14:30: User case configurations - short demonstrations + group work
+   - 14:30 to 15:00: Output specification - and PyNcview.
    - 15:00 to 15:30: Coffee break
    - 15:30 to 17:00: User case work continued
 - **Wednesday - Sensitivity, auto-calibration and ensemble simulations + social activity**
