@@ -64,7 +64,7 @@ Below a preliminary program is provided. Additional information will be provided
    - 15:30 to 17:00: User case work continued
 - **Wednesday - Sensitivity, auto-calibration and ensemble simulations + social activity**
    - 09:00 to 09:30: Introduction to sensitivity and calibration - JB
-   - 09:30 to 10:30: [ACPy](acpy-0.5.2-py2.py3-none-any.whl) - [gotm.yaml](gotm.yaml) - KB
+   - 09:30 to 10:30: [ACPy](acpy-0.5.4-py2.py3-none-any.whl) - [gotm.yaml](gotm.yaml) - KB
    - 10:30 to 11:00: Coffee break
    - 11:00 to 12:00: ACPy continued - KB
    - 12:00 to 17:00: Social activity - 3 hour sailing trip on [Aventure](http://www.galeasen-aventura.dk/).
