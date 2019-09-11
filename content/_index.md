@@ -12,3 +12,11 @@ BB participates in a number of public software projects within the area of natur
 ### Projects
 
 BB has over the years participated in a number of national in international research projects but do also participate in more applied projects. We are always interested to hear about potential collaboration options.
+
+### UN GlobalGoals
+
+The software BB participates in developing is used through out the world to work towards sustainable development as defined through [UN GlobalGoals](https://www.globalgoals.org/).
+
+|  &nbsp;    |  &nbsp;   |   &nbsp; |   &nbsp; |
+|:-----------:|:----------:|:-------:|:-------:|
+|[{{< figure src="/TheGlobalGoals_Icons_Color_Goal_6.svg" width="100%" >}}](https://www.globalgoals.org/6-clean-water-and-sanitation)| [{{< figure src="/TheGlobalGoals_Icons_Color_Goal_13.svg" width="100%" >}}](https://www.globalgoals.org/13-climate-action)| [{{< figure src="/TheGlobalGoals_Icons_Color_Goal_14.svg" width="100%" >}}](https://www.globalgoals.org/14-life-below-water)|[{{< figure src="/TheGlobalGoals_Icons_Color_Goal_17.svg" width="100%" >}}](https://www.globalgoals.org/17-partnerships-for-the-goals)|
