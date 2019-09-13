@@ -15,7 +15,7 @@ BB has over the years participated in a number of national in international rese
 
 ### UN GlobalGoals
 
-The software BB participates in developing is used through out the world to work towards sustainable development as defined through [UN GlobalGoals](https://www.globalgoals.org/).
+The software BB participates in developing is used throughout the world to work towards sustainable development as defined through [UN GlobalGoals](https://www.globalgoals.org/).
 
 |  &nbsp;    |  &nbsp;   |   &nbsp; |   &nbsp; |
 |:-----------:|:----------:|:-------:|:-------:|
