@@ -172,10 +172,11 @@ So what is the difference - and why should I pay for a license:
 
 1. The development work of **ParSAC** has been considerable and started when Jorn 
    Bruggeman worked in Oxford as a personal tool. Since then BB have added new 
-   features and made it much more generic and user friendly. 
-2. Further development of **ParSAC** will 100% depend on external funding.
-3. **Any** type of support will require a license-file with support enabled.
-4. The _http_ transport method requires additional configuration. This transport method 
+   features and made it much more generic and user friendly.
+2. It is not a viable business model to develop and provide the software for free - and then in addition also provide free service. 
+3. Further development of **ParSAC** will 100% depend on external funding.
+4. **Any** type of support will require a license-file with support enabled.
+5. The _http_ transport method requires additional configuration. This transport method 
    allows for doing the actual simulations on a remote cluster and obtaining results on your local computer.
 
 The main advantage of automated sensitivity and calibration tools is time saving (and hopefully 
