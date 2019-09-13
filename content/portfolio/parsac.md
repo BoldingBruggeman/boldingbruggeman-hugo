@@ -1,80 +1,102 @@
 +++
 author = "Jorn Bruggeman & Karsten Bolding"
 date = "2017-05-31T13:58:54+02:00"
-description = "Auto Calibration in PYthon"
+description = "Parallel Sensitivity Analysis and Calibration"
 draft = false
 image = "/portfolio/img/config_acpy.png"
 showonlyimage = false
-title = "ACPY"
+title = "ParSAC"
 weight = 50
 
 +++
 
-**ACPy** is an auto-calibration utility for 
+**ParSAC** is a sensitivity and calibration utility for 
 [GOTM](http://www.gotm.net)
  and 
 [fabm0d](http://www.fabm.net)
-. **ACPy** is written in 
+. **ParSAC** is written in 
 [Python](http://www.python.org).
 
 <!--more-->
 
-### Introduction
+#### Introduction
 
-The calibration of complex coupled physical/bio-geochemical numerical models is a very time-consuming task typical requiring a large number of - *run model -> compare with observations -> adjust paramters* - cycles. The final chosen set of model parameters is the - partly - subjective judgement by the person performing the calibration and do not in anyway assure that even a small part of the global parameter space has been covered. This is mainly due to the [curse of dimensionality](https://en.wikipedia.org/wiki/Curse_of_dimensionality) stating that the number of tries becomes so large that it is impossible due to resource limitations on todays computers. As an example - with only 3 model parameters and 10 subdivisions in each paramter space 1000 simulations are needed if a brute force method is applied. For models counting 10's to 100's a systematic search of the optimal set of parameters in the full space is impossible.
+**ParSAC** -- Parallel Sensitivity Analysis and Calibration.
+
+The calibration of complex coupled physical/bio-geochemical numerical models is a very time-consuming task typical requiring a large number of - *run model -> compare with observations -> adjust paramters* - cycles. The final chosen set of model parameters is the - partly - subjective judgement by the person performing the calibration and do not in anyway assure that even a small part of the global parameter space has been covered. This is mainly due to the [curse of dimensionality](https://en.wikipedia.org/wiki/Curse_of_dimensionality) stating that the number of realisations becomes so large that it is impossible due to resource limitations on todays computers. As an example - with only 3 model parameters and 10 subdivisions in each paramter space 1000 simulations are needed if a brute force method is applied. For models counting 10's to 100's a systematic search of the optimal set of parameters in the full space is impossible.
 
 The problem sketched above is by no means unique to the field of numerical models of natural waters and a lot of research has been done during the last decades. As it is not possible to guarantee **the** optimal solution statistical methods have been developed. Many of these methods are based on [Monte Carlo methods](https://en.wikipedia.org/wiki/Monte_Carlo_method) - i.e. a statistical method where the optimal solution is based on a choice between a number of tries. The optimal choice is based on the evaluation of an objective function calculating the *performance* in some way but directly comparable between **model evaluations**. A very important step in the Monte Carlo method is the selection of the parameter sets to be used for the model runs.
 
-**ACPy** is a tool written in Python to perform *automatic* optimization (in the Maximum Likelihood sense) of a selected set of model paramters in a [GOTM](www.gotm.net) simulation. The present version of ACPy has two different methods included for finding the maximum likelyhood - Nelder-Mead (simplex) from 1965 and Differential Evolution from 1997. In addition to the actual optimisation ACPy also provides a set of support tools for evaluating the optimization. ACPy stores all tested parameter sets in a data-base together with the maximum-likely hood value for each of the sets. This allows for further analysis - see below for examples.
+**ParSAC** is a tool written in Python to perform sensitivity and *automatic* optimization (in the Maximum Likelihood sense) of a selected set of model paramters in a [GOTM](www.gotm.net) simulation. The present version of ParSAC has two different methods included for finding the maximum likelyhood - Nelder-Mead (simplex) from 1965 and Differential Evolution from 1997. In addition to the actual optimisation ParSAC also provides a set of support tools for evaluating the optimization. ParSAC stores all tested parameter sets in a data-base together with the maximum-likely hood value for each of the sets. This allows for further analysis - see below for examples.
 
-The limitations of **ACPy** - and any optimization software - must be considered. **ACPy** will in an objective way make an estimate on the optimal value for a set of paramters the user has specified. This is done by evaluating a function comparing model results with observations. **ACPy** can not account for short-comings in the model itself - i.e. does GOTM - actually describe the processes the observations are a result of. Furthermore, **ACPy** can not judge the quality of the observations provided but will use them _as is_. And lastly - the set of parameters to optimize for provided by the user - are they the right ones.
+The limitations of **ParSAC** - and any optimization software - must be considered. **ParSAC** will in an objective way make an estimate on the optimal value for a set of paramters the user has specified. This is done by evaluating a function comparing model results with observations. **ParSAC** can not account for short-comings in the model itself - i.e. does GOTM - actually describe the processes the observations are a result of. Furthermore, **ParSAC** can not judge the quality of the observations provided but will use them _as is_. And lastly - the set of parameters to optimize for provided by the user - are they the right ones.
 
-**ACPy** is a statistical method and does not gurantee the _correct_ solution. **ACPy** comes with an estimate of the _correct_ solution. To gain faith in the reults it is a very good idea to run a number of optimizations to see if similar results are optained between them. This behaviour is facilitated with the _--repeat_ option shown later.
+**ParSAC** is a statistical method and does not gurantee the _correct_ solution. **ParSAC** comes with an estimate of the _correct_ solution. To gain faith in the reults it is a very good idea to run a number of optimizations to see if similar results are optained between them. This behaviour is facilitated with the _--repeat_ option shown later.
 
-**ACPy** can be run in serial and parallel mode. If the Python package [parallel pythoni - pp](https://www.parallelpython.com/) is installed the auto-calibration task is automatically spread across available local cores. Additional configuration is possible to run on distributed memory machines as well - see the ParallelPython documentation for configuration. This makes sense only for methods supporting it.
+**ParSAC** can be run in serial and parallel mode. If the Python package [parallel pythoni - pp](https://www.parallelpython.com/) is installed the auto-calibration task is automatically spread across available local cores. Additional configuration is possible to run on distributed memory machines as well - see the ParallelPython documentation for configuration. This makes sense only for methods supporting it.
 
-**ACPy** combines: 1) a working model (GOTM) setup with 2) a single [XML](https://www.w3.org/XML/) formatted configuration file and 3) a set of observations to compute an optimal estimate of the included model parameters. 
+**ParSAC** combines: 1) a working model (GOTM) setup with 2) a single [XML](https://www.w3.org/XML/) formatted configuration file and 3) a set of observations to compute an optimal estimate of the included model parameters. 
 
-**ACPy** is work in progress and will be extended with new capabillities as they are developed. For specific feature requests please contact the authors.
+#### ParSAC operation
 
-### Users guide
+**ParSAC** is developed as a command line utility with extensive command line help support. This means that for now to get a good workflow the user must be confident working in a terminal window - independent of platform - being on Windows, Mac or Linux. Typical use will have 2 to 3 terminals open to allow for easy use of different sub-modules.
 
-We provide a users guide with the main features of **ACPy** described. This is not an in-depth description of all possible parameter settings. They are best explored with a working setup and in front of a computer. The guide will contain information on how to operate **ACPy** as well as explain the different modules included and their usage. 
-
-**ACPy** is developed as a command line utility but nothing in the design prevents a GUI-wrapper around the core **ACPy** main python file. This means that for now to get a good workflow the user must be confident working in a terminal window - independent of - being on Windows, Mac or Linux. Typical use will have 2 to 3 terminals open to allow for easy use of different sub-modules.
-
-The user guide is about the use of **ACPy** and **not** about technical issues with e.g. _pip_. The guide is also not a descrition of optimization methods in general. The purpose of the guide is to allow a user who have a working GOTM setup perform an automatic calibration.
 
 #### Installation
 
-<s>ACPy is available from [PyPI](https://pypi.python.org/pypi) and can be installed by simply executing the command:
+ParSAC is available from [PyPI](https://pypi.python.org/pypi) and can be installed by simply executing the command:
 ```
-pip install acpy
+pip install parsac <--user>
 ```
-</s>
-
-ACPy is not fully ready for realease yet - but anyone interested in experimenting can manually download and install a [wheel file](../../wheels/acpy-0.2-py2-none-any.whl). Dennis Trolle has written a [short note](../ACPy_install_and_run.docx) of the most basic use cases - from a Windows users perspective. Until we approach a release candidate there will be no support. Also expect changes in ACPy usage.
-
 Succes of installation can be tested by:
 ```
-acpy -h
+kb@orca ~ $ parsac -v
+0.5.4
+kb@orca ~ $ 
 ```
-producing
 
-{{< figure src="/portfolio/img/acpy_h.png" >}}
 
-_Note that the released version of **ACPy** might not compare 100% to the above figure._
+#### ParSAC usage
 
-#### ACPy usage
+**ParSAC** is a python wrapper around a number of individual python modules. It only provides common configuration between the modules and set up infrastructure. Each of the individual modules handles their own usage and help. The very modular way **ParSAC** is implemented makes it easy to add new functionally to the main program.
 
-**ACPy** is a python wrapper around a number of individual python modules. It only provides common configuration between the modules and set up infrastructure. Each of the individual modules - described below - handles their own usage and help. The very modular way **ACPy** is implemented makes it easy to add new functionally to the main program.
+All execution of **ParSAC** commands is done via the 'parsac' command wrapper - see the figure below.
+```
+kb@orca ~ $ parsac -h
+usage: parsac [-h] [-v] {sensitivity,calibration,ensemble,service} ...
 
-All execution of **ACPY** commands is done via the 'acpy' command wrapper - see the figure above.
+parsac - Parallel Sensitivity Analysis and Calibration
 
+positional arguments:
+  {sensitivity,calibration,ensemble,service}
+    sensitivity         Sensitivity analysis
+    calibration         Auto calibration
+    ensemble            Ensemble simulation
+    service             Service information
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -v, --version         show program's version number and exit
+kb@orca ~ $ 
+```
+
+
+Each of the commands have their own help system - available like:
+```
+kb@orca ~ $ parsac sensitivity -h
+usage: parsac sensitivity [-h] {sample,run,analyze} ...
+
+positional arguments:
+  {sample,run,analyze}
+
+optional arguments:
+  -h, --help            show this help message and exit
+kb@orca ~ $ 
+```
 
 ##### Main configuration file
 
-**ACPy** is configured via a xml formatted file. The example below is from the 
+**ParSAC** is configured via a xml formatted file. The example below is from the 
 Northern North Sea annual standard set-up. The configuration file contains 5 different sections: 
 
   1. _transports_ - how are results communicated and stored 
@@ -83,10 +105,10 @@ Northern North Sea annual standard set-up. The configuration file contains 5 dif
   4. _parameters_ - list of parameters to use in the calibration
   5. _observations_ - list of observation files - in the format shown further down
 
-{{< figure src="/portfolio/img/acpy_config_file.png" >}}
+{{< figure src="/portfolio/img/parsac_config.png" >}}
 
 The configuration has optimized for
-7 parameters in the model (the 8th is a dummy variable for testing). The y-axis is the maximum likelihood value and  the x-axes show the span for the different parameters. **ACPy** supports logaritmic parameters - as the specification for _k\_min_ shows.
+8 parameters in the model. The y-axis is the maximum likelihood value and  the x-axes show the span for the different parameters. **ParSAC** supports logaritmic parameters - as the specification for _k\_min_ shows.
 
 Parameters to optimize can specified via Fortran _namelist_ or YAML-formatted syntax.
 
@@ -96,89 +118,41 @@ The autocalibration module - see the 'run' module - with the configuration above
 
 ##### Observation file format
 
-Observations in **ACPy** are read in from simple ASCII files with one variable in each file. The observation files are listed in the main configuration file and links the file to a output file and model variable. The format is very simple as seen in the figure below. Each observation consists of a time-stamp and a depth (measure from the surface).
+Observations in **ParSAC** are read in from simple ASCII files with one variable in each file. The observation files are listed in the main configuration file and links the file to a output file and model variable. The format is very simple as seen in the figure below. Each observation consists of a time-stamp and a depth (measure from the surface).
 
 {{< figure src="/portfolio/img/acpy_obs_file.png" >}}
 
 The observations are used to calculate the maximum likelihood function on which the auto-calibration is based.
 
 
-#### The 'run' module
-
-The **run** module is the workhorse of **ACPy** and does the actual auto-calibration. The **run** command takes a large number of commandline parameters of which one is mandatory - the .xml configuration file - and all others are optional.
-
-An overview of all the parameters can be shown using this command:
-```
-acpy run -h
-```
-
-with this result:
-
-{{< figure src="/portfolio/img/acpy_run_h.png" >}}
-
-
-#### The 'plot' module
-
-The plot module gives a graphical overview of the calibration process. A sub-plot is created for each of the parameters from the configuration file. On the x-axis the sub-plots has the range for the parameter in question - and on the y-axis the maximum likelihood value. An example if provided further down.
-
-```
-acpy plot -h
-```
-
-{{< figure src="/portfolio/img/acpy_plot_h.png" >}}
-
-The _plot_ module also takes a relative large number of parameters. Here only one will be mentioned - _-u_. Giving this option the plot will be autoomatically updated as new results are stored in the database file.
-
-
-#### The 'plotbest' module
-
-The _plotbest_ module re-runs a specific run - default the best one - and provides 3 plots and calculates some statistical parameters.
-
-```
-acpy plotbest -h
-```
-
-{{< figure src="/portfolio/img/acpy_plotbest_h.png" >}}
-
-#### The 'animate_2d' module
-```
-acpy animate_2d -h
-```
-
-
-#### The 'summary' module
-```
-acpy summary -h
-```
-
-{{< figure src="/portfolio/img/acpy_summary_h.png" >}}
-
-<!--
-
-#### Results
-
-The configuration file consists of 
-5 sections transports, executable, setup, parameters and observations.
--->
-
-
-<!--
-{{< figure src="/portfolio/img/acpy_example.png" >}}
--->
-
-
-<!--
-
 -----
 
 ### Support plans
 
-A licensed version of **ACPy** can be obtained by contacting BB. The license 
-fee is Euro 500,- for a personal license allowing the holder of the license to
-run on any number of computers. The license file is **strictly** personal
-and must under no circumstances be distributed to third parties.
+**ParSAC** installed from PyPi comes without any support - as shown via:
+```
+kb@orca ~ $ parsac service
+Reading service from:
+   /home/kb/.local/lib/python3.6/site-packages/parsac/service.txt
+Section: User
+  user = Unsupported version
+  date = 2019-09-01
+  expire = never
+Section: Key
+  key = dbba28d3036ddd2ea9afe5c8880194b8  -
+Section: Features
+  parallel = Shared
+kb@orca ~ $ 
+```
 
-The licensed version of **ACPy** will be provided as a _wheel_ file and must 
+**ParSAC** support can be arranged with Bolding & Bruggeman and will depend on the
+type and extend of the support requested.
+
+We provide a basic support license of **ParSAC** that can be obtained by contacting BB. This license will provide support to get an already configured GOTM setup ready to do sensitivity and calibration. The license does _NOT_ provide any support in making the basic model setup. Typically the setup will be provided to BB as a _.zip_ for us to work with.
+The license fee is Euro 300,- ex. VAT for a personal license.
+The licensed wheel file is **strictly** personal and must under no circumstances be distributed to third parties.
+
+A support version of **ParSAC** will be provided as a _wheel_ file and must 
 be installed on the computer(s) using the command:
 
 ```
@@ -186,27 +160,24 @@ pip install <name_of_wheel_file> <--upgrade> <--user>
 
 <--upgrade> <--user> are optional.
 
-<--upgrade> if ACPy is already installed on the system
+<--upgrade> if ParSAC is already installed on the system
 <--user> if installation is not system wide
 ```
 
-The licensed and non-licensed versions of **ACPy** will produce the same
-results when run on the same configuration (except for difference inherent in
-statistical methods where you draw random numbers from distributions).
+The licensed and non-licensed versions of **ParSAC** will produce the same
+results when run on the same configuration (except for differences inherent in
+statistical methods where you draw random numbers from probability distributions).
 
 So what is the difference - and why should I pay for a license:
 
-1. The presence of a valid license-file will enable **ACPy** running in 
-   parallel mode - both on shared memory computers (multiple cores) and
-   distributed memory computers (clusters).
-2. Further development of **ACPy** will 100% depend on additional funding.
-3. Support will require a valid license-file.
+1. The development work of **ParSAC** has been considerable and started when Jorn 
+   Bruggeman worked in Oxford as a personal tool. Since then BB have added new 
+   features and made it much more generic and user friendly. 
+2. Further development of **ParSAC** will 100% depend on external funding.
+3. **Any** type of support will require a license-file with support enabled.
+4. The _http_ transport method requires additional configuration. This transport method 
+   allows for doing the actual simulations on a remote cluster and obtaining results on your local computer.
 
-The development of **ACPy** has been considerable work and started when Jorn 
-Bruggeman worked in Oxford as a personal tool. Since then BB have added new 
-features and made it much more generic and user friendly. 
-
-The main advantage of a auto-calibration tool is time-saving (and hopefully 
+The main advantage of automated sensitivity and calibration tools is time saving (and hopefully 
 better model simulations). So if time is of any value to you - consider 
 buying a support plan - for the time we have saved you.
--->
