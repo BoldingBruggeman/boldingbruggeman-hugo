@@ -10,12 +10,17 @@ weight = 50
 
 +++
 
-**ParSAC** is a sensitivity and calibration utility for 
+**ParSAC** is a sensitivity analysis and calibration tool for 
 [GOTM](http://www.gotm.net)
  and 
 [fabm0d](http://www.fabm.net)
 . **ParSAC** is written in 
 [Python](http://www.python.org).
+
+Citable version (latest):
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4276111.svg)](https://doi.org/10.5281/zenodo.4276111)
+
+[![GitHub contributors](https://img.shields.io/github/contributors/Naereen/StrapDown.js.svg)](https://github.com/BoldingBruggeman/parsac/graphs/contributors)
 
 <!--more-->
 
