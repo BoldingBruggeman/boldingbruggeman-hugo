@@ -7,7 +7,7 @@ date: 2017-06-08T10:00:00+00:00
 ---
 
 ### Software
-BB participates in a number of public software projects within the area of natural waters - notably [GOTM](www.gotm.net) and [GETM](www.getm.eu) - as well as our own [Open Source](https://en.wikipedia.org/wiki/Open-source_software) projects. These are described on the [portfolio](www.bolding-bruggeman.com/portfolio) page. The Fortran based software projects are available from [Github](www.github.com) and require a working Fortran compiler to be installed in order to compile the source code into a working program. The [Python](www.python.org) based projects are also hosted on Github - but in addition - also installable via [pip](https://pypi.python.org/pypi/pip) via simple commands as e.g. *pip install pyncview*. Note that the software is compatible with Python 2.7 only. More information will be available on the project pages.
+BB participates in a number of public software projects within the area of natural waters - notably [GOTM](www.gotm.net) and [GETM](www.getm.eu) - as well as our own [Open Source](https://en.wikipedia.org/wiki/Open-source_software) projects. These are described on the [portfolio](www.bolding-bruggeman.com/portfolio) page. The Fortran based software projects are available from [Github](www.github.com) and require a working Fortran compiler to be installed in order to compile the source code into a working program. The [Python](www.python.org) based projects are also hosted on Github - but in addition - also installable via [pip](https://pypi.python.org/pypi/pip) via simple commands as e.g. *pip install pyncview*. More information will be available on the project pages.
 
 ### Projects
 
