@@ -1,0 +1,32 @@
+baseURL: "https://bolding-bruggeman.com/"
+languageCode: "en-dk"
+title: "Bolding & Bruggeman ApS"
+
+taxonomies: {}
+
+params:
+  description: "Scientific software and consulting in ocean and freshwater biogeochemistry"
+  tagline: "Advancing aquatic biogeochemical modelling"
+  address: "Strandgyden 25, 5466 Asperup, Denmark"
+  established: "2002"
+  cvr: "CVR: DK-31072200"
+  email: "info@bolding-bruggeman.com"
+  github: "https://github.com/BoldingBruggeman"
+
+menu:
+  main:
+    - name: "About"
+      url: "/"
+      weight: 1
+    - name: "People"
+      url: "/people/"
+      weight: 2
+    - name: "Projects"
+      url: "/projects/"
+      weight: 3
+    - name: "Software"
+      url: "/software/"
+      weight: 4
+    - name: "Contact"
+      url: "/contact/"
+      weight: 5

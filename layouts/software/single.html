@@ -1,0 +1,90 @@
+{{ define "main" }}
+
+<div class="page-header">
+  <div class="container">
+    <p class="eyebrow">Open source</p>
+    <h1>Software</h1>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <p style="max-width:560px; color:var(--ink-soft);">
+      We develop and maintain several widely-used open-source modelling frameworks
+      that form the backbone of aquatic biogeochemical research worldwide.
+    </p>
+
+    <div class="software-cards">
+
+      <div class="sw-card">
+        <h3>FABM</h3>
+        <div class="sw-lang">Fortran / Python / C</div>
+        <p style="font-size:0.87rem; color:var(--ink-soft);">
+          The Framework for Aquatic Biogeochemical Models provides a standardised
+          interface for biogeochemical model components, enabling plug-and-play
+          coupling with any physical host model.
+        </p>
+        <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <a href="https://fabm.net" target="_blank" class="btn-sm">↗ fabm.net</a>
+          <a href="https://github.com/fabm-model/fabm" target="_blank" class="btn-sm">↗ GitHub</a>
+        </div>
+      </div>
+
+      <div class="sw-card">
+        <h3>GOTM</h3>
+        <div class="sw-lang">Fortran / Python</div>
+        <p style="font-size:0.87rem; color:var(--ink-soft);">
+          The General Ocean Turbulence Model is a one-dimensional water column model
+          for hydrodynamic and thermodynamic processes, with a comprehensive library
+          of turbulence closure schemes.
+        </p>
+        <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <a href="https://gotm.net" target="_blank" class="btn-sm">↗ gotm.net</a>
+          <a href="https://github.com/gotm-model/code" target="_blank" class="btn-sm">↗ GitHub</a>
+        </div>
+      </div>
+
+      <div class="sw-card">
+        <h3>GETM</h3>
+        <div class="sw-lang">Fortran</div>
+        <p style="font-size:0.87rem; color:var(--ink-soft);">
+          The General Estuarine Transport Model is a three-dimensional baroclinic
+          ocean model for coastal and estuarine applications, tightly coupled to FABM
+          for biogeochemical simulations.
+        </p>
+        <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <a href="https://getm.eu" target="_blank" class="btn-sm">↗ getm.eu</a>
+          <a href="https://github.com/getm-model/code" target="_blank" class="btn-sm">↗ GitHub</a>
+        </div>
+      </div>
+
+      <div class="sw-card">
+        <h3>parsac</h3>
+        <div class="sw-lang">Python</div>
+        <p style="font-size:0.87rem; color:var(--ink-soft);">
+          A Python package for parallelised sensitivity analysis and calibration of
+          numerical models, with special support for GOTM and FABM-based simulations.
+        </p>
+        <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <a href="https://github.com/BoldingBruggeman/parsac" target="_blank" class="btn-sm">↗ GitHub</a>
+        </div>
+      </div>
+
+      <div class="sw-card">
+        <h3>eat</h3>
+        <div class="sw-lang">Python / Fortran</div>
+        <p style="font-size:0.87rem; color:var(--ink-soft);">
+          The Ensemble and Assimilation Tool provides data assimilation capabilities
+          for GOTM–FABM simulations, supporting ensemble Kalman filter methods for
+          state and parameter estimation.
+        </p>
+        <div style="margin-top:1rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+          <a href="https://github.com/BoldingBruggeman/eat" target="_blank" class="btn-sm">↗ GitHub</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+{{ end }}

@@ -1,0 +1,80 @@
+{{ define "main" }}
+
+<div class="page-header">
+  <div class="container">
+    <p class="eyebrow">The team</p>
+    <h1>People</h1>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+
+    <p style="max-width:560px; color:var(--ink-soft); margin-bottom:0.5rem;">
+      We are a small, focused team of scientists and engineers passionate about
+      open, reproducible aquatic modelling.
+    </p>
+
+    <div class="people-grid">
+      {{ range .Site.Data.people.people }}
+      {{ $initials := "" }}
+      {{ $parts := split .name " " }}
+      {{ range $parts }}{{ $initials = printf "%s%s" $initials (substr . 0 1) }}{{ end }}
+
+      <div class="person-card fade-up">
+        <div class="person-avatar">{{ $initials }}</div>
+        <div class="person-name">{{ .name }}</div>
+        <div class="person-role">{{ .role }}</div>
+        <div class="person-focus">{{ .focus }}</div>
+        <div class="person-meta">
+          {{ with .place }}<span>📍 {{ . }}</span>{{ end }}
+          {{ with .joined }}<span>Since {{ . }}</span>{{ end }}
+        </div>
+        <div class="person-bio">{{ .bio | markdownify }}</div>
+        {{ with .cv }}
+        <ul class="person-cv">
+          {{ range . }}
+          <li>
+            {{ if reflect.IsMap . }}
+              {{ $year := or (index . "year") (index . "years") "" }}
+              {{ $text := index . "text" }}
+              {{ $url  := index . "url" }}
+              <span class="cv-year">{{ $year }}</span>
+              {{ if $url }}<a href="{{ $url }}" target="_blank" rel="noopener">{{ $text }}</a>{{ else }}{{ $text }}{{ end }}
+            {{ else }}
+              <span class="cv-year"></span>{{ . }}
+            {{ end }}
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+        <div class="person-links">
+          {{ with .email }}
+          <a href="mailto:{{ . }}" class="person-link">✉ Email</a>
+          {{ end }}
+          {{ with .github }}
+          <a href="https://github.com/{{ . }}" target="_blank" rel="noopener" class="person-link">↗ GitHub</a>
+          {{ end }}
+          {{ with .orcid }}
+          <a href="https://orcid.org/{{ . }}" target="_blank" rel="noopener" class="person-link">⬡ ORCID</a>
+          {{ end }}
+        </div>
+      </div>
+      {{ end }}
+    </div>
+
+    {{ with .Site.Data.people.alumni }}
+    <div class="alumni-section">
+      <h3>Alumni</h3>
+      <ul class="alumni-list">
+        {{ range . }}
+        <li>{{ .name }}</li>
+        {{ end }}
+      </ul>
+    </div>
+    {{ end }}
+
+  </div>
+</section>
+
+{{ end }}

@@ -1,13 +1,116 @@
 {{ define "main" }}
-<div class="col-xs-12 col-sm-8 col-md-9 content-column white-background">
-  {{ partial "mobile_nav_toggle.html" . }}
-  <div class="row">
-    <div class="col-lg-8">
-      <div class="content-column-content">
-         <h1>{{ .Title }}</h1>
-         {{ .Content }}
-      </div>
+
+{{/* ---- Hero ---- */}}
+<div class="hero-dark">
+  <div class="container">
+    <div class="hero-logo-wrap fade-up">
+      <img src="/images/logo-stacked.png" alt="Bolding Bruggeman" width="140">
+    </div>
+    <p class="hero-eyebrow fade-up fade-up-delay-1">Scientific software &amp; consulting</p>
+    <h1 class="fade-up fade-up-delay-1">
+      Advancing aquatic<br>biogeochemical modelling
+    </h1>
+    <p class="hero-lead fade-up fade-up-delay-2">
+      We develop open-source modelling frameworks and provide specialist
+      consulting in ocean and freshwater biogeochemistry — bridging
+      fundamental science and operational applications.
+    </p>
+    <div class="hero-meta fade-up fade-up-delay-3">
+      <span class="hero-meta-item">{{ .Site.Params.address }}</span>
+      <span class="hero-meta-item">Est. {{ .Site.Params.established }}</span>
+      <span class="hero-meta-item">{{ .Site.Params.cvr }}</span>
     </div>
   </div>
 </div>
+
+{{/* ---- About ---- */}}
+<section>
+  <div class="container">
+    <div class="about-grid">
+      <div>
+        <h2>What we do</h2>
+        <p style="margin-top:1rem;">
+          Bolding &amp; Bruggeman ApS is a Danish company specialising in the
+          development and application of numerical models for aquatic systems.
+          We combine decades of experience in physical oceanography, marine
+          biogeochemistry, and scientific software engineering.
+        </p>
+        <p>
+          Our work spans from fundamental model development to operational
+          forecasting systems, always with an emphasis on open, reproducible,
+          and well-documented software.
+        </p>
+      </div>
+      <div>
+        <h2>Expertise</h2>
+        <ul class="capability-list" style="margin-top:1rem;">
+          <li>Biogeochemical model development (FABM)</li>
+          <li>Turbulence &amp; mixing parameterisation (GOTM)</li>
+          <li>Coupled physical–biogeochemical simulations</li>
+          <li>Lake and coastal water quality modelling</li>
+          <li>Model calibration &amp; uncertainty quantification</li>
+          <li>Open-source scientific software architecture</li>
+          <li>Copernicus Marine Service integration</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* ---- Software strip ---- */}}
+<section class="software-strip" style="border-top:none; padding:2.5rem 0;">
+  <div class="container">
+    <h2>Core open-source software</h2>
+    <p>Tools used by research groups and operational centres worldwide.</p>
+    <div class="software-items">
+      <div class="software-item">
+        <h4>FABM</h4>
+        <p>Framework for Aquatic Biogeochemical Models</p>
+        <a href="https://fabm.net" target="_blank" rel="noopener">fabm.net →</a>
+      </div>
+      <div class="software-item">
+        <h4>GOTM</h4>
+        <p>General Ocean Turbulence Model</p>
+        <a href="https://gotm.net" target="_blank" rel="noopener">gotm.net →</a>
+      </div>
+      <div class="software-item">
+        <h4>GETM</h4>
+        <p>General Estuarine Transport Model</p>
+        <a href="https://getm.eu" target="_blank" rel="noopener">getm.eu →</a>
+      </div>
+      <div class="software-item">
+        <h4>parsac</h4>
+        <p>Parallelised sensitivity analysis &amp; calibration</p>
+        <a href="https://github.com/BoldingBruggeman/parsac" target="_blank" rel="noopener">GitHub →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{/* ---- Recent projects teaser ---- */}}
+<section>
+  <div class="container">
+    <h2>Recent projects</h2>
+    <p style="margin-top:0.5rem; color:var(--ink-soft); margin-bottom:2rem;">
+      A selection of ongoing and recently completed research collaborations.
+    </p>
+    {{ $projects := .Site.Data.projects.projects }}
+    {{ range first 3 $projects }}
+    <div style="padding:1rem 0; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:baseline; gap:1rem;">
+      <div>
+        <span style="font-weight:500;">{{ .title }}</span>
+        <span style="font-size:0.82rem; color:var(--ink-soft); margin-left:0.75rem;">{{ .funding }}</span>
+      </div>
+      <div style="display:flex; gap:0.75rem; align-items:center; flex-shrink:0;">
+        <span class="project-period" style="font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-faint);">{{ .period.start }}–{{ if .period.end }}{{ .period.end }}{{ else }}present{{ end }}</span>
+        <span class="project-badge badge-{{ .status }}">{{ .status }}</span>
+      </div>
+    </div>
+    {{ end }}
+    <p style="margin-top:1.5rem;">
+      <a href="/projects/" class="btn-sm">All projects →</a>
+    </p>
+  </div>
+</section>
+
 {{ end }}

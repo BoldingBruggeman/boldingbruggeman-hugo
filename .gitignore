@@ -1,2 +1,5 @@
 *.swp
 public/
+public.old/
+hugo.toml.keep
+.hugo_build.lock

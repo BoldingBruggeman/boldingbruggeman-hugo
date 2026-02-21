@@ -1,0 +1,61 @@
+{{ define "main" }}
+
+<div class="page-header">
+  <div class="container">
+    <p class="eyebrow">Get in touch</p>
+    <h1>Contact</h1>
+  </div>
+</div>
+
+<section>
+  <div class="container">
+    <div class="contact-grid">
+      <div class="contact-detail">
+
+        <div class="contact-item">
+          <div class="label">Email</div>
+          <div class="value">
+            <a href="mailto:{{ .Site.Params.email }}">{{ .Site.Params.email }}</a>
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">Address</div>
+          <div class="value">
+            Bolding &amp; Bruggeman ApS<br>
+            {{ .Site.Params.address }}
+          </div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">Registration</div>
+          <div class="value">{{ .Site.Params.cvr }}</div>
+        </div>
+
+        <div class="contact-item">
+          <div class="label">GitHub</div>
+          <div class="value">
+            <a href="{{ .Site.Params.github }}" target="_blank" rel="noopener">
+              {{ .Site.Params.github | strings.TrimPrefix "https://" }}
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <div>
+        <p style="color:var(--ink-soft); font-size:0.95rem;">
+          We welcome enquiries about research collaborations, consulting engagements,
+          training workshops, and software support. Please reach out by email and
+          we will respond promptly.
+        </p>
+        <p style="color:var(--ink-soft); font-size:0.95rem; margin-top:1rem;">
+          For bug reports and feature requests related to our open-source software,
+          please use the respective GitHub issue trackers.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{ end }}

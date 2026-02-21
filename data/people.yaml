@@ -1,0 +1,85 @@
+#bio: |
+#First paragraph.
+#
+#Second paragraph — blank line between them creates a new paragraph.
+
+people:
+  - name: "Karsten Bolding"
+    role: "Founder, owner & Senior Scientist"
+    focus: "Ocean modelling, GOTM, numerical methods, HPC"
+    bio: |
+      For Karsten to edit
+
+      Karsten is a physical oceanographer and software engineer who has been at the
+      forefront of open-source ocean modelling for over two decades. He is the lead
+      developer of the General Ocean Turbulence Model (GOTM) and a core contributor
+      to the GETM coastal ocean model.
+    cv:
+      - text: "MSc Physical Oceanography, University of Copenhagen"
+        year: "1990"
+      - text: "PhD Ocean Modelling, University of Hamburg"
+        year: "1994"
+        url: "https://www.uni-hamburg.de"
+      - text: "Senior Scientist, DHI Group"
+        year: "1996–2002"
+        url: "https://www.dhigroup.com"
+      - text: "Founder, Bolding & Bruggeman ApS"
+    email: "karsten@bolding-bruggeman.com"
+    joined: 2002
+    place: "Baaring, Denmark"
+    github: "kboldingbruggeman"
+    orcid: "0000-0001-9002-7009"
+    photo: ""
+
+  - name: "Jorn Bruggeman"
+    role: "Owner & Senior Scientist"
+    focus: "Biogeochemical modelling, FABM development, plankton ecology"
+    bio: |
+      For Jorn to edit
+
+      Jorn is a theoretical biologist and modeller with a passion for understanding
+      the ocean's biogeochemical cycles. He is the lead developer of the Framework
+      for Aquatic Biogeochemical Models (FABM) and has contributed to numerous
+      international research projects spanning from the North Sea to the global ocean.
+    cv:
+      - add a short cv
+    email: "jorn@bolding-bruggeman.com"
+    joined: 2008
+    place: "Plymouth, UK"
+    github: "jornbruggeman"
+    orcid: "0000-0002-2819-2614"
+    photo: ""
+
+  - name: "Nicolas Azaña Schnedler-Meyer"
+    role: "Research Scientist"
+    focus: "Marine biogeochemistry, nutrient cycling, model coupling"
+    bio: >
+      For Nicolas to fill out
+    cv:
+      - add a short cv
+    email: "nicolas@bolding-bruggeman.com"
+    joined: 2023
+    place: "Bryrup, Denmark"
+    github: ""
+    orcid: ""
+    photo: ""
+
+  - name: "Ricardo Javier Torres"
+    role: "Research Scientist"
+    focus: "Freshwater biogeochemistry, lake modelling, eutrophication"
+    bio: >
+      For Ricardo to fill out
+    cv:
+      - add a short cv
+    email: "ricardo@bolding-bruggeman.com"
+    joined: 2025
+    place: "Coruxo, Vigo, Spain"
+    github: ""
+    orcid: ""
+    photo: ""
+
+alumni:
+  - name: "Hans Burchard, founder and owner 2002-2014"
+  - name: "Marie Maar"
+  - name: "Hannes Rennau"
+  - name: "Bjarne Büchmann"
