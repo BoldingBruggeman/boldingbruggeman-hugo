@@ -1,0 +1,4 @@
+{{- /* words with a popup that shows .items (name, url) in turn, each a link opened in a new tab */ -}}
+{{- $first := index .items 0 -}}
+<span class="tip cycle" tabindex="0" data-items="{{ jsonify .items }}">{{ .text }}<span class="pop" role="tooltip"><a href="{{ $first.url }}" target="_blank" rel="noopener">{{ $first.name }}</a></span></span>
+{{- /**/ -}}

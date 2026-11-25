@@ -1,0 +1,16 @@
+# The popups on the front page: the names shown in turn, each a link (opened in a new tab).
+# Change a link here, e.g. from Wikipedia to a page with our results.
+models:
+  - { name: "GOTM",   url: "https://github.com/gotm-model/code" }
+  - { name: "FABM",   url: "https://github.com/fabm-model/fabm" }
+  - { name: "pyGETM", url: "https://github.com/BoldingBruggeman/getm-rewrite" }
+waters:
+  - { name: "oceans",      url: "https://en.wikipedia.org/wiki/Ocean" }
+  - { name: "shelf seas",  url: "https://en.wikipedia.org/wiki/Continental_shelf" }
+  - { name: "inland seas", url: "https://en.wikipedia.org/wiki/Inland_sea" }
+  - { name: "estuaries",   url: "https://en.wikipedia.org/wiki/Estuary" }
+  - { name: "fjords",      url: "https://en.wikipedia.org/wiki/Fjord" }
+  - { name: "bays",        url: "https://en.wikipedia.org/wiki/Bay" }
+  - { name: "lagoons",     url: "https://en.wikipedia.org/wiki/Lagoon" }
+  - { name: "lakes",       url: "https://en.wikipedia.org/wiki/Lake" }
+  - { name: "reservoirs",  url: "https://en.wikipedia.org/wiki/Reservoir" }

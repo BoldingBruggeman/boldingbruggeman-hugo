@@ -33,8 +33,8 @@
   .tip:hover .pop, .tip:focus-within .pop, .tip.open .pop { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
   .pop a { color: #9fdde4; text-decoration: none; }
   .pop a:hover { text-decoration: underline; }
-  #models .pop { min-width: 6rem; text-align: center; font-weight: 500; letter-spacing: .02em; }
-  #models .pop a { display: block; }
+  .cycle .pop { min-width: 6rem; text-align: center; font-weight: 500; letter-spacing: .02em; }
+  .cycle .pop a { display: block; }
   footer { border-top: 1px solid var(--line); color: var(--soft); font-size: 0.8rem; text-align: center;
            padding: 1.2rem 1rem; }
   footer span + span::before { content: "·"; margin: 0 0.6em; }
@@ -54,8 +54,8 @@
 <main>
   <img src="/images/logo-standing.png" alt="Bolding Bruggeman" width="771" height="318">
   <p>We develop and apply
-    <span class="tip" id="models" tabindex="0">numerical models<span class="pop" role="tooltip"><a href="https://github.com/gotm-model/code" target="_blank" rel="noopener">GOTM</a></span></span>
-    for natural waters.</p>
+    {{ partial "cycle.html" (dict "text" "numerical models" "items" site.Data.popups.models) }}
+    for {{ partial "cycle.html" (dict "text" "natural waters" "items" site.Data.popups.waters) }}.</p>
   <p>We prefer personal communication and are not on social media, but can be
     <span class="tip" id="contact" tabindex="0">contacted here<span class="pop" role="tooltip"></span></span>.</p>
 </main>
@@ -65,14 +65,12 @@
   <span>{{ .Site.Params.cvr }}</span>
 </footer>
 <script>
-  // numerical models: GOTM, FABM, pyGETM in turn while the popup is shown, each a link to its
-  // repository; the turn stops while the pointer is on the popup, so the shown one can be clicked
-  (function () {
-    var tip = document.getElementById("models"), pop = tip.querySelector(".pop"), a = pop.querySelector("a");
-    var models = [["GOTM", "https://github.com/gotm-model/code"],
-                  ["FABM", "https://github.com/fabm-model/fabm"],
-                  ["pyGETM", "https://github.com/BoldingBruggeman/getm-rewrite"]], i = 0, timer = null;
-    function show() { a.textContent = models[i][0]; a.href = models[i][1]; i = (i + 1) % models.length; }
+  // numerical models, natural waters: their items (data/popups.yaml) in turn while the popup is shown,
+  // each a link; the turn stops while the pointer is on the popup, so the shown one can be clicked
+  document.querySelectorAll(".cycle").forEach(function (tip) {
+    var pop = tip.querySelector(".pop"), a = pop.querySelector("a");
+    var items = JSON.parse(tip.dataset.items), i = 0, timer = null;
+    function show() { a.textContent = items[i].name; a.href = items[i].url; i = (i + 1) % items.length; }
     function start() { if (!timer) { show(); timer = setInterval(show, 1200); } }
     function stop() { clearInterval(timer); timer = null; }
     tip.addEventListener("mouseenter", start); tip.addEventListener("focus", start);
@@ -80,7 +78,7 @@
       if (!tip.contains(e.relatedTarget)) stop(); });
     pop.addEventListener("mouseenter", stop);
     pop.addEventListener("mouseleave", function () { if (tip.matches(":hover")) start(); });
-  })();
+  });
   // contact: the addresses are put together here, so they are not plain text in the page source
   (function () {
     var pop = document.querySelector("#contact .pop"), d = "bolding-bruggeman.com";
@@ -96,7 +94,7 @@
     t.addEventListener("click", function (e) {
       if (e.target.tagName === "A") return;
       var open = t.classList.toggle("open");
-      if (t.id === "models") t.dispatchEvent(new Event(open ? "mouseenter" : "mouseleave"));
+      if (t.classList.contains("cycle")) t.dispatchEvent(new Event(open ? "mouseenter" : "mouseleave"));
     });
   });
 </script>
