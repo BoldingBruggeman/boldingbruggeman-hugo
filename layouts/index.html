@@ -38,6 +38,8 @@
   footer { border-top: 1px solid var(--line); color: var(--soft); font-size: 0.8rem; text-align: center;
            padding: 1.2rem 1rem; }
   footer span + span::before { content: "·"; margin: 0 0.6em; }
+  footer .tip { color: inherit; border-bottom-color: var(--soft); }
+  footer .pop { text-align: center; font-weight: 300; }
   @media (max-width: 600px) {
     body { font-size: 1.15rem; }
     /* the contact popup is wider than a phone allows around the words: centre it on the paragraph */
@@ -60,7 +62,7 @@
     <span class="tip" id="contact" tabindex="0">contacted here<span class="pop" role="tooltip"></span></span>.</p>
 </main>
 <footer>
-  <span>Bolding &amp; Bruggeman ApS</span>
+  <span class="tip" id="about" tabindex="0">Bolding &amp; Bruggeman ApS<span class="pop" role="tooltip">Founded in 2002 as Bolding &amp; Burchard ApS,<br>Bolding &amp; Bruggeman ApS since 2014.</span></span>
   <span>{{ .Site.Params.address }}</span>
   <span>{{ .Site.Params.cvr }}</span>
 </footer>
