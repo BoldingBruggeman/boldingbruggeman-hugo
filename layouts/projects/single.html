@@ -1,97 +1,34 @@
-{{ define "main" }}
-
-<div class="page-header">
-  <div class="container">
-    <p class="eyebrow">Research &amp; consulting</p>
-    <h1>Projects</h1>
-  </div>
-</div>
-
-<section>
-  <div class="container">
-
-    <div class="projects-filter">
-      <button class="filter-btn active" data-filter="all">All</button>
-      <button class="filter-btn" data-filter="active">Active</button>
-      <button class="filter-btn" data-filter="completed">Completed</button>
-    </div>
-
-    <div class="projects-list">
-      {{ range .Site.Data.projects.projects }}
-      <div class="project-row" data-status="{{ .status }}">
-
-        <div class="project-header" onclick="toggleProject(this.parentElement)">
-          <div class="project-title-area">
-            <div class="project-name">{{ .title }}</div>
-            <div class="project-meta-row">
-              <span class="project-badge badge-{{ .status }}">{{ .status }}</span>
-              <span class="project-period">{{ .period.start }}–{{ if .period.end }}{{ .period.end }}{{ else }}present{{ end }}</span>
-              {{ with .funding_short }}<span style="font-size:0.78rem; color:var(--ink-faint);">{{ . }}</span>{{ else }}{{ with .funding }}<span style="font-size:0.78rem; color:var(--ink-faint);">{{ . }}</span>{{ end }}{{ end }}
-            </div>
-          </div>
-          <span class="project-toggle">+</span>
-        </div>
-
-        <div class="project-body">
-          <div>
-            <p class="project-desc">{{ .description }}</p>
-            {{ if .partners }}
-            <div style="font-size:0.82rem; color:var(--ink-soft);">
-              <span style="font-family:var(--font-mono); font-size:0.68rem; text-transform:uppercase; letter-spacing:0.08em; color:var(--ink-faint);">Partners: </span>
-              {{ delimit .partners " · " }}
-            </div>
-            {{ end }}
-            <div class="project-links-row">
-              {{ with .official_website }}
-              <a href="{{ . }}" target="_blank" rel="noopener" class="btn-sm">↗ Official site</a>
-              {{ end }}
-              {{ with .our_website }}
-              <a href="{{ . }}" target="_blank" rel="noopener" class="btn-sm">↗ Our project page</a>
-              {{ end }}
-            </div>
-          </div>
-          <ul class="project-details">
-            <li>
-              <span class="detail-label">Lead</span>
-              <span class="detail-value">{{ .responsible }}</span>
-            </li>
-            {{ with .funding }}
-            <li style="align-items:start;">
-              <span class="detail-label">Funding</span>
-              <span class="detail-value" style="line-height:1.5;">{{ . }}</span>
-            </li>
-            {{ end }}
-          </ul>
-        </div>
-
-      </div>
-      {{ end }}
-    </div>
-
-  </div>
-</section>
-
-<script>
-function toggleProject(row) {
-  row.classList.toggle('open');
-}
-
-// Filter buttons
-document.querySelectorAll('.filter-btn').forEach(btn => {
-  btn.addEventListener('click', () => {
-    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-    btn.classList.add('active');
-    const filter = btn.dataset.filter;
-    document.querySelectorAll('.project-row').forEach(row => {
-      if (filter === 'all' || row.dataset.status === filter) {
-        row.style.display = '';
-      } else {
-        row.style.display = 'none';
-        row.classList.remove('open');
-      }
-    });
-  });
-});
-</script>
-
-{{ end }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{{ partial "head.html" . }}
+</head>
+<body>
+<main class="list">
+  <a class="home" href="/"><img src="/images/logo-standing.png" alt="Bolding Bruggeman" width="771" height="318"></a>
+  {{- /* data/projects.yaml, newest first; current while end is this year or later, or empty */}}
+  {{- $current := slice }}{{ $past := slice }}
+  {{- range sort site.Data.projects.projects "start" "desc" }}
+    {{- if or (not .end) (ge (int .end) now.Year) }}{{ $current = $current | append . }}{{ else }}{{ $past = $past | append . }}{{ end }}
+  {{- end }}
+  {{- range slice (dict "head" "Current projects" "items" $current) (dict "head" "Past projects" "items" $past) }}
+  {{- if .items }}
+  <h2>{{ .head }}</h2>
+  <ul>
+    {{- range .items }}
+    <li>
+      {{ if .url }}<a class="name" href="{{ .url }}" target="_blank" rel="noopener">{{ .name }}</a>{{ else }}<span class="name">{{ .name }}</span>{{ end }}
+      <span class="years">{{ .start }}–{{ .end }}</span>
+      <span class="title">{{ .title }}</span>
+      {{- with .funding }}
+      <span class="funding">{{ . }}</span>
+      {{- end }}
+    </li>
+    {{- end }}
+  </ul>
+  {{- end }}
+  {{- end }}
+</main>
+{{ partial "footer.html" . }}
+</body>
+</html>

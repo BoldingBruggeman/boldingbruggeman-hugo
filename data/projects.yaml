@@ -1,62 +1,66 @@
+# Past and present projects, shown on /projects/ (newest first; "current" while end is this year or later).
+# To add one, copy an entry. Fields:
+#   name     short name or acronym (shown in bold, links to url)
+#   title    full title
+#   start    first year
+#   end      last year (leave empty for open-ended work)
+#   funding  programme or client, short
+#   url      project page; for ended EU projects CORDIS keeps working when the project site is gone
+# Dates of the EU projects are from CORDIS.
 projects:
-  - title: "NECCTON"
-    description: >
-      New Copernicus Capability for Trophic Ocean Networks. Developing next-generation
-      marine ecosystem models to be integrated into the Copernicus Marine Service,
-      with a focus on food web dynamics and ecosystem services.
-    period:
-      start: "2023"
-      end: "2026"
-    status: "active"
-    funding_short: "EU Horizon Europe / UKRI"
-    funding: >
-      This project has received funding from Horizon Europe RIA under Grant Number 101081273 and the UK Research and Innovation
-    responsible: "Jorn Bruggeman"
-    official_website: "https://neccton.eu"
-    our_website: ""
-    partners:
-      - "PML (UK)"
-      - "NIOZ (NL)"
-      - "CMCC (IT)"
-      - "MIO (FR)"
-      - "+ some more to be added"
+  - name: "OceanICU"
+    title: "Improving Carbon Understanding"
+    start: 2022
+    end: 2027
+    funding: "EU Horizon Europe"
+    url: "https://ocean-icu.eu"
 
-  - title: "OceanICU"
-    description: >
-      New Copernicus Capability for Trophic Ocean Networks. Developing next-generation
-      marine ecosystem models to be integrated into the Copernicus Marine Service,
-      with a focus on food web dynamics and ecosystem services.
-    period:
-      start: "2023"
-      end: "2026"
-    status: "active"
-    funding_short: "EU Horizon Europe / UKRI"
-    funding: >
-      This work was funded by the European Union under grant agreement no. 101083922 (OceanICU) and UK Research and Innovation (UKRI) under the UK government’s Horizon Europe funding guarantee [grant number 10054454, 10063673, 10064020, 10059241, 10079684, 10059012, 10048179]
-    responsible: "Jorn Bruggeman"
-    official_website: "https://ocean-icu.eu"
-    our_website: ""
-    partners:
-      - "PML (UK)"
-      - "NIOZ (NL)"
-      - "CMCC (IT)"
-      - "MIO (FR)"
+  - name: "MEWS"
+    title: "Managing Events and Extremes in Water Supplies"
+    start: 2024
+    end: 2027
+    funding: "Water4All / Innovation Fund Denmark"
+    url: "https://mews-water.com"
 
-  - title: "MEWS"
-    description: >
-      When considering hydroclimatic extreme events MEWS considers the effects of present and future extreme hydrologic inputs on water supply drinking water quality,  and also the effects of the transport and processing of the input nutrients and organic carbon as it moves from input to water supply withdrawal.
-    period:
-      start: "2024"
-      end: "2027"
-    status: "active"
-    funding_short: "Water4All and the Eupean Union"
-    funding: >
-      The Water4All Partnership have received funding from the European Union’s Horizon 2020 programme for research and innovation under Grant Agreement N°101060874. We wish to acknowledge the contribution from the Water4All RDI Funded
-    responsible: "Karsten Bolding"
-    official_website: "https://mews-water.com"
-    our_website: ""
-    partners:
-      - "Uppsala University (SE)"
-      - "The Kinneret Limnological Institute (IL)"
-      - "Bolding & Bruggeman (DK)"
-      - "get the real name (DE)"
+  - name: "NECCTON"
+    title: "New Copernicus capability for trophic ocean networks"
+    start: 2023
+    end: 2026
+    funding: "EU Horizon Europe"
+    url: "https://neccton.eu"
+
+  - name: "SEAMLESS"
+    title: "Services based on Ecosystem data AssiMiLation: Essential Science and Solutions"
+    start: 2021
+    end: 2023
+    funding: "EU Horizon 2020"
+    url: "https://cordis.europa.eu/project/id/101004032"
+
+  - name: "MERMAID"
+    title: "Innovative multi-purpose offshore platforms: planning, design and operation"
+    start: 2012
+    end: 2015
+    funding: "EU FP7"
+    url: "https://cordis.europa.eu/project/id/288710"
+
+  - name: "MEECE"
+    title: "Marine Ecosystem Evolution in a Changing Environment; the start of FABM"
+    start: 2008
+    end: 2013
+    funding: "EU FP7"
+    url: "https://cordis.europa.eu/project/id/212085"
+
+  - name: "ECOOP"
+    title: "European COastal-shelf sea OPerational observing and forecasting system"
+    start: 2007
+    end: 2010
+    funding: "EU FP6"
+    url: "https://cordis.europa.eu/project/id/36355"
+
+# To confirm (names and years from ~/BB/Projects; titles, dates and funding not checked):
+#  - name: "PROGNOS"     # 2015-2019, Water JPI?
+#  - name: "Femern"      # 2008-2012, Fehmarn Belt fixed link, hydrography and water quality modelling
+#  - name: "HRensembleHR"  # 2006-2009
+#  - name: "MaBenE"      # 2002-2005, EU FP5?
+#  - name: "OCEANIDES"   # 2003-2005, EU FP5?
+#  - name: "INNOSENSE"   # 2020

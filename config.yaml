@@ -4,8 +4,8 @@ title: "Bolding & Bruggeman ApS"
 
 taxonomies: {}
 
-# one page only; the old pages stay in content/ but are not built
-disableKinds: ["page", "section", "taxonomy", "term", "rss", "sitemap"]
+# front page and projects only; the other old pages stay in content/ with build render never
+disableKinds: ["section", "taxonomy", "term", "rss", "sitemap"]
 
 params:
   description: "We develop and apply numerical models for natural waters."
