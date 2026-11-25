@@ -6,14 +6,15 @@
 <body>
 <main class="list">
   <a class="home" href="/"><img src="/images/logo-standing.png" alt="Bolding Bruggeman" width="771" height="318"></a>
+  <p class="more"><a href="#current">Current</a>&nbsp; · &nbsp;<a href="#past">Past</a>&nbsp; · &nbsp;<a href="#consultancy">Consultancy</a></p>
   {{- /* data/projects.yaml, newest first; current while end is this year or later, or empty */}}
   {{- $current := slice }}{{ $past := slice }}
   {{- range sort site.Data.projects.projects "start" "desc" }}
     {{- if or (not .end) (ge (int .end) now.Year) }}{{ $current = $current | append . }}{{ else }}{{ $past = $past | append . }}{{ end }}
   {{- end }}
-  {{- range slice (dict "head" "Current projects" "items" $current) (dict "head" "Past projects" "items" $past) }}
+  {{- range slice (dict "id" "current" "head" "Current projects" "items" $current) (dict "id" "past" "head" "Past projects" "items" $past) }}
   {{- if .items }}
-  <h2>{{ .head }}</h2>
+  <h2 id="{{ .id }}">{{ .head }}</h2>
   <ul>
     {{- range .items }}
     <li>
@@ -29,7 +30,7 @@
   {{- end }}
   {{- end }}
   {{- with site.Data.projects.consultancy }}
-  <h2>Consultancy</h2>
+  <h2 id="consultancy">Consultancy</h2>
   <ul>
     {{- range sort . "start" "desc" }}
     <li>

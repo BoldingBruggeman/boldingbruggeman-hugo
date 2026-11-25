@@ -38,8 +38,12 @@
   footer span + span::before { content: "·"; margin: 0 0.6em; }
   footer .tip { color: inherit; border-bottom-color: var(--soft); }
   footer .pop { text-align: center; font-weight: 300; }
-  a.more { color: var(--soft); font-size: 1rem; text-decoration: none; border-bottom: 1px solid var(--line); }
-  a.more:hover { color: var(--sea); border-bottom-color: var(--sea); }
+  html { scroll-behavior: smooth; }
+  p.more { color: var(--soft); font-size: 1rem; }
+  p.more a { color: var(--soft); text-decoration: none; border-bottom: 1px solid var(--line); }
+  p.more a:hover { color: var(--sea); border-bottom-color: var(--sea); }
+  main.list p.more { align-self: center; margin: -1.5rem 0 0.5rem; }
+  main.list h2 { scroll-margin-top: 1rem; }
   /* projects page */
   main.list { justify-content: flex-start; align-items: stretch; text-align: left; gap: 0; padding: 2.5rem 1rem 4rem;
               width: 100%; max-width: 46rem; margin: 0 auto; font-size: 1.05rem; }
