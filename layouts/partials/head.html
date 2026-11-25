@@ -1,6 +1,10 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light">
+<meta name="color-scheme" content="light dark">
+<script>
+  // a theme picked with the footer switch (light or dark) is kept in this browser; without one the system setting decides
+  try { var t = localStorage.getItem("theme"); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+</script>
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{ site.Params.description }}{{ end }}">
 <title>{{ if not .IsHome }}{{ .Title }} – {{ end }}{{ site.Title }}</title>
 <link rel="icon" href="/favicon.ico" sizes="16x16 32x32 48x48">
@@ -9,7 +13,28 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
-  :root { --ink: #1d2a33; --soft: #6b7780; --sea: #006a74; --line: #e3e7ea; --bg: #ffffff; }
+  :root { --ink: #1d2a33; --soft: #6b7780; --sea: #006a74; --line: #e3e7ea; --bg: #ffffff;
+          --pop-bg: #1d2a33; --pop-ink: #ffffff; --pop-link: #9fdde4; }
+  /* dark mode: the system setting, unless the footer switch picked a theme */
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) { --ink: #e3e9ec; --soft: #93a1a9; --sea: #5cc2cb; --line: #2a363e; --bg: #10181d;
+            --pop-bg: #e3e9ec; --pop-ink: #10181d; --pop-link: #006a74; color-scheme: dark; }
+    :root:not([data-theme="light"]) .logo-light { display: none; }
+    :root:not([data-theme="light"]) .logo-dark { display: inline; }
+    :root:not([data-theme="light"]) .theme .to-dark { display: none; }
+    :root:not([data-theme="light"]) .theme .to-light { display: inline; }
+  }
+  :root[data-theme="dark"] { --ink: #e3e9ec; --soft: #93a1a9; --sea: #5cc2cb; --line: #2a363e; --bg: #10181d;
+            --pop-bg: #e3e9ec; --pop-ink: #10181d; --pop-link: #006a74; color-scheme: dark; }
+  :root[data-theme="dark"] .logo-light { display: none; }
+  :root[data-theme="dark"] .logo-dark { display: inline; }
+  :root[data-theme="dark"] .theme .to-dark { display: none; }
+  :root[data-theme="dark"] .theme .to-light { display: inline; }
+  .logo-dark, .theme .to-light { display: none; }
+  .theme { background: none; border: 0; padding: 0 0.2em; margin-left: 0.6em; color: var(--soft); cursor: pointer;
+           vertical-align: -0.2em; line-height: 1; }
+  .theme:hover { color: var(--sea); }
+  .theme svg { width: 1.1em; height: 1.1em; }
   * { box-sizing: border-box; margin: 0; }
   html, body { height: 100%; }
   body { background: var(--bg); color: var(--ink); font: 300 1.35rem/1.6 'Outfit', system-ui, sans-serif;
@@ -21,15 +46,15 @@
   .tip { position: relative; display: inline-block; color: var(--sea); cursor: default;
          border-bottom: 1px dotted var(--sea); outline: none; }
   .pop { position: absolute; left: 50%; bottom: calc(100% + 0.6rem); transform: translate(-50%, 0.3rem);
-         background: var(--ink); color: #fff; font-size: 1rem; line-height: 1.5; font-weight: 400;
+         background: var(--pop-bg); color: var(--pop-ink); font-size: 1rem; line-height: 1.5; font-weight: 400;
          padding: 0.5rem 0.9rem; border-radius: 6px; white-space: nowrap; text-align: left;
          opacity: 0; visibility: hidden; transition: opacity .18s, transform .18s, visibility .18s; z-index: 1; }
   .pop::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -6px;
-                border: 6px solid transparent; border-top-color: var(--ink); }
+                border: 6px solid transparent; border-top-color: var(--pop-bg); }
   /* invisible bridge so the pointer can move from the word into the popup */
   .pop::before { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 0.8rem; }
   .tip:hover .pop, .tip:focus-within .pop, .tip.open .pop { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
-  .pop a { color: #9fdde4; text-decoration: none; }
+  .pop a { color: var(--pop-link); text-decoration: none; }
   .pop a:hover { text-decoration: underline; }
   .cycle .pop { min-width: 6rem; text-align: center; font-weight: 500; letter-spacing: .02em; }
   .cycle .pop a { display: block; }
@@ -69,5 +94,6 @@
     #contact .pop::after { display: none; }
     footer span { display: block; }
     footer span + span::before { content: none; }
+    .theme { margin: 0.4rem 0 0; }
   }
 </style>
