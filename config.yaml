@@ -4,12 +4,15 @@ title: "Bolding & Bruggeman ApS"
 
 taxonomies: {}
 
+# one page only; the old pages stay in content/ but are not built
+disableKinds: ["page", "section", "taxonomy", "term", "rss", "sitemap"]
+
 params:
-  description: "Scientific software and consulting in ocean and freshwater biogeochemistry"
+  description: "We develop and apply numerical models for natural waters."
   tagline: "Advancing aquatic biogeochemical modelling"
-  address: "Strandgyden 25, 5466 Asperup, Denmark"
+  address: "Strandgyden 25, DK-5466 Asperup, Denmark"
   established: "2002"
-  cvr: "CVR: DK-31072200"
+  cvr: "CVR/VAT: DK31072204"
   email: "info@bolding-bruggeman.com"
   github: "https://github.com/BoldingBruggeman"
 

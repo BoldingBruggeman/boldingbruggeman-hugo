@@ -1,116 +1,104 @@
-{{ define "main" }}
-
-{{/* ---- Hero ---- */}}
-<div class="hero-dark">
-  <div class="container">
-    <div class="hero-logo-wrap fade-up">
-      <img src="/images/logo-stacked.png" alt="Bolding Bruggeman" width="140">
-    </div>
-    <p class="hero-eyebrow fade-up fade-up-delay-1">Scientific software &amp; consulting</p>
-    <h1 class="fade-up fade-up-delay-1">
-      Advancing aquatic<br>biogeochemical modelling
-    </h1>
-    <p class="hero-lead fade-up fade-up-delay-2">
-      We develop open-source modelling frameworks and provide specialist
-      consulting in ocean and freshwater biogeochemistry — bridging
-      fundamental science and operational applications.
-    </p>
-    <div class="hero-meta fade-up fade-up-delay-3">
-      <span class="hero-meta-item">{{ .Site.Params.address }}</span>
-      <span class="hero-meta-item">Est. {{ .Site.Params.established }}</span>
-      <span class="hero-meta-item">{{ .Site.Params.cvr }}</span>
-    </div>
-  </div>
-</div>
-
-{{/* ---- About ---- */}}
-<section>
-  <div class="container">
-    <div class="about-grid">
-      <div>
-        <h2>What we do</h2>
-        <p style="margin-top:1rem;">
-          Bolding &amp; Bruggeman ApS is a Danish company specialising in the
-          development and application of numerical models for aquatic systems.
-          We combine decades of experience in physical oceanography, marine
-          biogeochemistry, and scientific software engineering.
-        </p>
-        <p>
-          Our work spans from fundamental model development to operational
-          forecasting systems, always with an emphasis on open, reproducible,
-          and well-documented software.
-        </p>
-      </div>
-      <div>
-        <h2>Expertise</h2>
-        <ul class="capability-list" style="margin-top:1rem;">
-          <li>Biogeochemical model development (FABM)</li>
-          <li>Turbulence &amp; mixing parameterisation (GOTM)</li>
-          <li>Coupled physical–biogeochemical simulations</li>
-          <li>Lake and coastal water quality modelling</li>
-          <li>Model calibration &amp; uncertainty quantification</li>
-          <li>Open-source scientific software architecture</li>
-          <li>Copernicus Marine Service integration</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-{{/* ---- Software strip ---- */}}
-<section class="software-strip" style="border-top:none; padding:2.5rem 0;">
-  <div class="container">
-    <h2>Core open-source software</h2>
-    <p>Tools used by research groups and operational centres worldwide.</p>
-    <div class="software-items">
-      <div class="software-item">
-        <h4>FABM</h4>
-        <p>Framework for Aquatic Biogeochemical Models</p>
-        <a href="https://fabm.net" target="_blank" rel="noopener">fabm.net →</a>
-      </div>
-      <div class="software-item">
-        <h4>GOTM</h4>
-        <p>General Ocean Turbulence Model</p>
-        <a href="https://gotm.net" target="_blank" rel="noopener">gotm.net →</a>
-      </div>
-      <div class="software-item">
-        <h4>GETM</h4>
-        <p>General Estuarine Transport Model</p>
-        <a href="https://getm.eu" target="_blank" rel="noopener">getm.eu →</a>
-      </div>
-      <div class="software-item">
-        <h4>parsac</h4>
-        <p>Parallelised sensitivity analysis &amp; calibration</p>
-        <a href="https://github.com/BoldingBruggeman/parsac" target="_blank" rel="noopener">GitHub →</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-{{/* ---- Recent projects teaser ---- */}}
-<section>
-  <div class="container">
-    <h2>Recent projects</h2>
-    <p style="margin-top:0.5rem; color:var(--ink-soft); margin-bottom:2rem;">
-      A selection of ongoing and recently completed research collaborations.
-    </p>
-    {{ $projects := .Site.Data.projects.projects }}
-    {{ range first 3 $projects }}
-    <div style="padding:1rem 0; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:baseline; gap:1rem;">
-      <div>
-        <span style="font-weight:500;">{{ .title }}</span>
-        <span style="font-size:0.82rem; color:var(--ink-soft); margin-left:0.75rem;">{{ .funding }}</span>
-      </div>
-      <div style="display:flex; gap:0.75rem; align-items:center; flex-shrink:0;">
-        <span class="project-period" style="font-family:var(--font-mono); font-size:0.72rem; color:var(--ink-faint);">{{ .period.start }}–{{ if .period.end }}{{ .period.end }}{{ else }}present{{ end }}</span>
-        <span class="project-badge badge-{{ .status }}">{{ .status }}</span>
-      </div>
-    </div>
-    {{ end }}
-    <p style="margin-top:1.5rem;">
-      <a href="/projects/" class="btn-sm">All projects →</a>
-    </p>
-  </div>
-</section>
-
-{{ end }}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<meta name="description" content="{{ .Site.Params.description }}">
+<title>{{ .Site.Title }}</title>
+<link rel="icon" type="image/svg+xml" href="/favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  :root { --ink: #1d2a33; --soft: #6b7780; --sea: #006a74; --line: #e3e7ea; --bg: #ffffff; }
+  * { box-sizing: border-box; margin: 0; }
+  html, body { height: 100%; }
+  body { background: var(--bg); color: var(--ink); font: 300 1.35rem/1.6 'Outfit', system-ui, sans-serif;
+         display: flex; flex-direction: column; }
+  main { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center;
+         padding: 2rem 1rem 9rem; text-align: center; gap: 2.5rem; }
+  main img { width: min(320px, 70vw); height: auto; margin-bottom: 1.2rem; }
+  p { max-width: 38rem; }
+  .tip { position: relative; display: inline-block; color: var(--sea); cursor: default;
+         border-bottom: 1px dotted var(--sea); outline: none; }
+  .pop { position: absolute; left: 50%; bottom: calc(100% + 0.6rem); transform: translate(-50%, 0.3rem);
+         background: var(--ink); color: #fff; font-size: 1rem; line-height: 1.5; font-weight: 400;
+         padding: 0.5rem 0.9rem; border-radius: 6px; white-space: nowrap; text-align: left;
+         opacity: 0; visibility: hidden; transition: opacity .18s, transform .18s, visibility .18s; z-index: 1; }
+  .pop::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -6px;
+                border: 6px solid transparent; border-top-color: var(--ink); }
+  /* invisible bridge so the pointer can move from the word into the popup */
+  .pop::before { content: ""; position: absolute; top: 100%; left: 0; right: 0; height: 0.8rem; }
+  .tip:hover .pop, .tip:focus-within .pop, .tip.open .pop { opacity: 1; visibility: visible; transform: translate(-50%, 0); }
+  .pop a { color: #9fdde4; text-decoration: none; }
+  .pop a:hover { text-decoration: underline; }
+  #models .pop { min-width: 6rem; text-align: center; font-weight: 500; letter-spacing: .02em; }
+  #models .pop a { display: block; }
+  footer { border-top: 1px solid var(--line); color: var(--soft); font-size: 0.8rem; text-align: center;
+           padding: 1.2rem 1rem; }
+  footer span + span::before { content: "·"; margin: 0 0.6em; }
+  @media (max-width: 600px) {
+    body { font-size: 1.15rem; }
+    /* the contact popup is wider than a phone allows around the words: centre it on the paragraph */
+    main p { position: relative; }
+    #contact { position: static; }
+    #contact .pop { bottom: calc(100% + 0.4rem); font-size: 0.95rem; }
+    #contact .pop::after { display: none; }
+    footer span { display: block; }
+    footer span + span::before { content: none; }
+  }
+</style>
+</head>
+<body>
+<main>
+  <img src="/images/logo-standing.png" alt="Bolding Bruggeman" width="771" height="318">
+  <p>We develop and apply
+    <span class="tip" id="models" tabindex="0">numerical models<span class="pop" role="tooltip"><a href="https://github.com/gotm-model/code" target="_blank" rel="noopener">GOTM</a></span></span>
+    for natural waters.</p>
+  <p>We prefer personal communication and are not on social media, but can be
+    <span class="tip" id="contact" tabindex="0">contacted here<span class="pop" role="tooltip"></span></span>.</p>
+</main>
+<footer>
+  <span>Bolding &amp; Bruggeman ApS</span>
+  <span>{{ .Site.Params.address }}</span>
+  <span>{{ .Site.Params.cvr }}</span>
+</footer>
+<script>
+  // numerical models: GOTM, FABM, pyGETM in turn while the popup is shown, each a link to its
+  // repository; the turn stops while the pointer is on the popup, so the shown one can be clicked
+  (function () {
+    var tip = document.getElementById("models"), pop = tip.querySelector(".pop"), a = pop.querySelector("a");
+    var models = [["GOTM", "https://github.com/gotm-model/code"],
+                  ["FABM", "https://github.com/fabm-model/fabm"],
+                  ["pyGETM", "https://github.com/BoldingBruggeman/getm-rewrite"]], i = 0, timer = null;
+    function show() { a.textContent = models[i][0]; a.href = models[i][1]; i = (i + 1) % models.length; }
+    function start() { if (!timer) { show(); timer = setInterval(show, 1200); } }
+    function stop() { clearInterval(timer); timer = null; }
+    tip.addEventListener("mouseenter", start); tip.addEventListener("focus", start);
+    tip.addEventListener("mouseleave", stop); tip.addEventListener("blur", function (e) {
+      if (!tip.contains(e.relatedTarget)) stop(); });
+    pop.addEventListener("mouseenter", stop);
+    pop.addEventListener("mouseleave", function () { if (tip.matches(":hover")) start(); });
+  })();
+  // contact: the addresses are put together here, so they are not plain text in the page source
+  (function () {
+    var pop = document.querySelector("#contact .pop"), d = "bolding-bruggeman.com";
+    [["Karsten Bolding", "karsten"], ["Ricardo Torres", "ricardo"]].forEach(function (p, k) {
+      if (k) pop.appendChild(document.createElement("br"));
+      var a = document.createElement("a");
+      a.href = "mailto:" + p[1] + "@" + d; a.textContent = p[1] + "@" + d;
+      pop.appendChild(document.createTextNode(p[0] + " – ")); pop.appendChild(a);
+    });
+  })();
+  // touch screens have no hover: a tap opens or closes a popup
+  document.querySelectorAll(".tip").forEach(function (t) {
+    t.addEventListener("click", function (e) {
+      if (e.target.tagName === "A") return;
+      var open = t.classList.toggle("open");
+      if (t.id === "models") t.dispatchEvent(new Event(open ? "mouseenter" : "mouseleave"));
+    });
+  });
+</script>
+</body>
+</html>
