@@ -44,7 +44,7 @@ projects:
     url: "https://cordis.europa.eu/project/id/288710"
 
   - name: "MEECE"
-    title: "Marine Ecosystem Evolution in a Changing Environment; the start of FABM"
+    title: "Marine Ecosystem Evolution in a Changing Environment"
     start: 2008
     end: 2013
     funding: "EU FP7"
@@ -64,3 +64,35 @@ projects:
 #  - name: "MaBenE"      # 2002-2005, EU FP5?
 #  - name: "OCEANIDES"   # 2003-2005, EU FP5?
 #  - name: "INNOSENSE"   # 2020
+#  - name: "Mumihus"     # 2009-2016, cooperation agreement
+
+# Consultancy, shown in its own section on /projects/ (newest first). Fields:
+#   client   who the work was for
+#   start    first year
+#   end      last year (same as start for a single year)
+#   topic    optional, one short line on what was done
+#   url      optional, the client's site
+# Years are from the folders in ~/BB/Projects and not checked; topics still to be written.
+consultancy:
+  - { client: "Swedish Meteorological and Hydrological Institute (SMHI)", start: 2026, end: 2026 }
+  - { client: "Plymouth Marine Laboratory (PML)", start: 2021, end: 2026 }
+  - { client: "Middle East Technical University (METU)", start: 2022, end: 2022 }
+  - { client: "European Food Safety Authority (EFSA)", start: 2023, end: 2023 }
+  - { client: "Norwegian Institute for Water Research (NIVA)", start: 2021, end: 2023 }
+  - { client: "National Oceanography Centre (NOC)", start: 2021, end: 2021 }
+  - { client: "Universität Hamburg, TRR 181", start: 2021, end: 2021 }
+  - { client: "Helmholtz-Zentrum Geesthacht (HZG)", start: 2019, end: 2021 }
+  - { client: "Leibniz Institute for Baltic Sea Research (IOW)", start: 2015, end: 2021 }
+  - { client: "European Commission Joint Research Centre (JRC)", start: 2014, end: 2020 }
+  - { client: "Syngenta", start: 2018, end: 2020 }
+  - { client: "Uppsala University", start: 2018, end: 2020 }
+  - { client: "Finnish Meteorological Institute (FMI)", start: 2018, end: 2019 }
+  - { client: "Nansen Environmental and Remote Sensing Center (NERSC)", start: 2017, end: 2019 }
+  - { client: "University of British Columbia (UBC)", start: 2017, end: 2019 }
+  - { client: "Aarhus University, for the Danish Environmental Protection Agency", start: 2017, end: 2019 }
+  - { client: "Danish Defence Centre for Operational Oceanography (FCOO)", start: 2013, end: 2013 }
+  - { client: "Danish Coastal Authority (Kystdirektoratet)", start: 2012, end: 2013 }
+  - { client: "Centre for Environment, Fisheries and Aquaculture Science (Cefas)", start: 2008, end: 2014 }
+  - { client: "GKSS Research Centre", start: 2008, end: 2009 }
+  - { client: "University of Western Australia (UWA)", start: 2008, end: 2008 }
+#  - { client: "NIRAS" }   # years unclear (folder KF)

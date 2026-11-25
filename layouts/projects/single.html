@@ -28,6 +28,20 @@
   </ul>
   {{- end }}
   {{- end }}
+  {{- with site.Data.projects.consultancy }}
+  <h2>Consultancy</h2>
+  <ul>
+    {{- range sort . "start" "desc" }}
+    <li>
+      {{ if .url }}<a class="name client" href="{{ .url }}" target="_blank" rel="noopener">{{ .client }}</a>{{ else }}<span class="name client">{{ .client }}</span>{{ end }}
+      <span class="years">{{ .start }}{{ if ne .start .end }}–{{ .end }}{{ end }}</span>
+      {{- with .topic }}
+      <span class="title">{{ . }}</span>
+      {{- end }}
+    </li>
+    {{- end }}
+  </ul>
+  {{- end }}
 </main>
 {{ partial "footer.html" . }}
 </body>
